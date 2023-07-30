@@ -8,7 +8,6 @@ import Hotel6 from "../assets/images/Hotel-7.jpg";
 import Hotel7 from "../assets/images/Hotel-8.jpg";
 import Hotel8 from "../assets/images/Hotel10.jpg";
 import Hotel9 from "../assets/images/Hotel11.png";
-import Hotel10 from "../assets/images/Hotel12.jpg";
 import Hotel11 from "../assets/images/Hotel13.jpg";
 import Hotel12 from "../assets/images/Hotel14.jpg";
 import Hotel13 from "../assets/images/Hotel15.webp";
@@ -28,6 +27,8 @@ import Bedroom from "../assets/images/bedroom1.jpg";
 import DESTIN from "../assets/images/destin5.jpg";
 import POOL from "../assets/images/destin3.jpg";
 import BEACH from "../assets/images/Hotel-7.jpg";
+import plane from "../assets/images/plane.jpg";
+
 
 export const HeroSlide = [
   {
@@ -53,7 +54,7 @@ export const HeroSlide = [
 export const Navigation = [
   {
     display: "Home",
-    path: "/",
+    path: "/Rest-Assured",
   },
   {
     display: "About Us",
@@ -85,7 +86,7 @@ export const FootLinks = [
   {
     title: "QuickLinks",
     Links: [
-      { display: "Home", path: "/" },
+      { display: "Home", path: "/Rest-Assured" },
       { display: "About Us", path: "/about-us" },
       { display: "Gellery", path: "/gallery" },
       { display: "Term & Condition", path: "*" },
@@ -167,56 +168,56 @@ export const Gallery = [
 export const Blog = [
   {
     image: room3,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. ",
   },
   {
     image: Bedroom,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. ",
   },
   {
     image: room4,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. ",
   },
   {
     image: Hotel12,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
   },
   {
     image: Hotel14,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
   },
   {
     image: Hotel16,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
   },
   {
     image: Hotel11,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
   },
   {
     image: Hotel19,
-    date: "July 03, 2022",
+    date: "July 03, 2023",
     button: "Buseiness",
     title: "Most Advanve Business Plan",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
@@ -227,68 +228,90 @@ export const Mostpopularhotel = [
   {
     image: room2,
     name: "HighWay Hotel",
-    price: "300.00",
+    price: 300.00,
+    discount: 8.5,
+    rating: 4
   },
   {
     image: room3,
-    name: "HighWay Hotel",
-    price: "450.00",
+    name: "Accra",
+    price: 450.00,
+    discount: 8,
+    rating: 4.5
   },
   {
     image: room4,
-    name: "HighWay Hotel",
-    price: "400.00",
+    name: "Lagos",
+    price: 400.00,
+    discount: 10,
+    rating: 3.5
   },
   {
     image: room5,
-    name: "HighWay Hotel",
-    price: "300.00",
+    name: "Cape Coast",
+    price: 300.00,
+    discount: 2,
+    rating: 4.8
   },
   {
     image: room1,
-    name: "HighWay Hotel",
-    price: "480.00",
+    name: "Turkey",
+    price: 480.00,
+    discount: 8,
+    rating: 3
   },
   {
     image: Hotel12,
     name: "California",
-    price: "290.00",
+    price: 290.00,
+    discount: 3,
+    rating: 5
   },
   {
     image: Hotel14,
-    name: "HighWay Hotel",
-    price: "400.00",
+    name: "Dubai",
+    price: 400.00,
+    discount: 4,
+    rating: 4.5
   },
   {
     image: Hotel16,
-    name: "HighWay Hotel",
-    price: "400.00",
+    name: "Dubai",
+    price: 500.00,
+    discount: 9,
+    rating: 3.5
   },
   {
     image: Hotel17,
-    name: "HighWay Hotel",
-    price: "400.00",
+    name: "Kumerica",
+    price: 600.00,
+    discount: 8,
+    rating: 4
   },
   {
     image: Hotel15,
-    name: "HighWay Hotel",
-    price: "400.00",
+    name: "Kumerica",
+    price: 350.00,
+    discount: 3.5,
+    rating: 4.5
   },
   {
     image: Hotel13,
-    name: "HighWay Hotel",
-    price: "400.00",
+    name: "Cape Coast",
+    price: 450.00,
+    discount: 5,
   },
   {
     image: Hotel6,
     name: "Kumasi",
-    price: "400.00",
+    price: 400.00,
+    discount: 3.5
   },
 ];
 
 export const OurPartnership = [
   {
-    image: Hotel10,
+    image: plane,
     company: "Company Name",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
   },
@@ -391,42 +414,41 @@ export const DisCover = [
   },
 ];
 
-
 export const AllOffers = [
   {
     image: Hotel17,
-    discount: '-15%',
+    discount: "-15%",
     title: "WEEKEND OFFER BREAKFAST INCLUDED",
     desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit Reprehenderit saepe harum delectus nihil, ducimus temporibus",
   },
   {
-    image: Hotel17,
-    discount: '-20%',
+    image: Hotel12,
+    discount: "-20%",
     title: "WEEKEND OFFER BREAKFAST INCLUDED",
     desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit Reprehenderit saepe harum delectus nihil, ducimus temporibus",
   },
   {
-    image: Hotel17,
-    discount: '-10%',
+    image: Hotel14,
+    discount: "-10%",
     title: "WEEKEND OFFER BREAKFAST INCLUDED",
     desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit Reprehenderit saepe harum delectus nihil, ducimus temporibus",
   },
   {
     image: Hotel9,
-    discount: '-20%',
+    discount: "-20%",
     title: "WEEKEND OFFER BREAKFAST INCLUDED",
     desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit Reprehenderit saepe harum delectus nihil, ducimus temporibus",
   },
   {
     image: Hotel8,
-    discount: '-15%',
+    discount: "-15%",
     title: "WEEKEND OFFER BREAKFAST INCLUDED",
     desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit Reprehenderit saepe harum delectus nihil, ducimus temporibus",
   },
   {
     image: Hotel7,
-    discount: '-10%',
+    discount: "-10%",
     title: "WEEKEND OFFER BREAKFAST INCLUDED",
     desc: " Lorem ipsum dolor sit amet consectetur, adipisicing elit Reprehenderit saepe harum delectus nihil, ducimus temporibus",
   },
-]
+];

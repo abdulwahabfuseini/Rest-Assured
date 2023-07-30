@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const AboutCard = () => {
   return (
-    <Container className="w-full h-full px-2 md:pt-12 md:pb-5 sm:px-5 md:px-4 lg:px-8">
+    <Container className="w-full h-full px-2 pt-12 md:pb-5 sm:px-5 md:px-4 lg:px-8">
       <Row className="">
         <h1 className="text-lg font-bold text-Header">About Us</h1>
         <Row className="flex flex-col gap-8 space-y-1 sm:flex-row">

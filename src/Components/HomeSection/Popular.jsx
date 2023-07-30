@@ -5,43 +5,45 @@ import { Autoplay, Navigation } from "swiper";
 import {
   FaChevronLeft,
   FaChevronRight,
-  FaStar,
-  FaStarHalfAlt,
 } from "react-icons/fa";
+import { Card, Image, List, Rate, Typography } from "antd";
 
 const Popular = () => {
   const [nextEl, setNextEl] = useState(null);
   const [prevEl, setPrevtEl] = useState(null);
 
   return (
-    <div className="w-full h-[500px]">
+    <div className="w-full h-[680px]">
       <div className="relative">
-        <header className="h-40 py-5 text-xl text-center bg-green-200">
+        <header className="h-44 py-5 text-xl text-center bg-green-200">
           <h1>@REST ASSURED HOTEL</h1>
-          <p className="pt-3 text-sm">Share your moments and have a better rest </p>
+          <p className="pt-3 text-sm sm:text-md">Share your moments and have a better rest </p>
         </header>
       
-        <div className="absolute w-full h-full px-4 top-24 sm:px-10 lg:px-24">
+        <List className="absolute w-full h-full px-3 top-28 sm:px-10 lg:px-10">
           <Swiper
             navigation={{ nextEl, prevEl }}
-            spaceBetween={14}
+            spaceBetween={8}
             loop={true}
             speed={1000}
             modules={[Autoplay, Navigation]}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            // autoplay={{ delay: 3000, disableOnInteraction: false }}
             className="w-full "
             breakpoints={{
               0: {
-                slidesPerView: 2,
+                slidesPerView: 1.3,
               },
               400: {
-                slidesPerView: 3,
+                slidesPerView: 1.4,
+              },
+              600: {
+                slidesPerView: 2,
               },
               768: {
                 slidesPerView: 3,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 4,
               },
           
             }}
@@ -49,25 +51,28 @@ const Popular = () => {
             {Mostpopularhotel.map((hotel, index) => (
               <SwiperSlide
                 key={index}
-                className="p-2 text-center bg-transparent border-2 shadow-lg border-slate-200 h-96"
+                className="text-center bg-transparent border-2 shadow-lg border-slate-200"
               >
-                <img
-                  src={hotel.image}
-                  alt=""
-                  className="object-cover w-full h-40"
-                />
-                <div className="flex items-center justify-center gap-1 py-2">
-                  <FaStar className="w-4 h-3 text-yellow-500" />
-                  <FaStar className="w-4 h-3 text-yellow-500" />
-                  <FaStar className="w-4 h-3 text-yellow-500" />
-                  <FaStarHalfAlt className="w-4 h-3 text-yellow-500" />
-                  <FaStarHalfAlt className="w-4 h-3 text-yellow-500" />
-                </div>
-                <p className="pb-3">{hotel.name}</p>
-                <p className="text-Header">
-                  ${hotel.price} /{" "}
-                  <span className="text-sm text-gray-600 ">Per night</span>
-                </p>
+               <Card
+                 cover={ <Image src={hotel.image} alt="" className="w-full object-cover" style={{height: 180, width: 500}} />}
+                
+                 actions={[ <Rate allowHalf value={hotel.rating} className="text-md"/>]}
+                 title={hotel.name}
+               >
+                <Card.Meta
+                 title={
+                  <Typography.Paragraph> 
+                    Price: ${hotel.price}
+                    <Typography.Text delete type="danger" className="pl-4">
+                      {parseFloat(hotel.price + (hotel.price * hotel.discount)/ 100).toFixed(2)}
+                    </Typography.Text>
+                  </Typography.Paragraph>
+                }
+                >
+                </Card.Meta>
+
+               </Card>
+                
               </SwiperSlide>
             ))}
           </Swiper>
@@ -79,7 +84,7 @@ const Popular = () => {
               <FaChevronRight className="w-8 h-8 p-2 font-bold bg-green-200 rounded-full text-dry" />
             </button>
           </div>
-        </div>
+        </List>
       </div>
     </div>
   );

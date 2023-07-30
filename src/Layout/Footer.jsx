@@ -22,7 +22,7 @@ const Footer = () => {
           className="object-cover w-full h-[740px]  sm:h-[560px] lg:h-[350px]"
         />
       </Row>
-      <Row className="absolute top-0 left-0 w-full h-full py-3 text-white bg-transparents lg:h-[350px] sm:h-[560px] md:px-9">
+      <Row className="absolute top-0 left-0 w-full h-full py-3 text-white bg-transparents lg:h-[350px] sm:h-[560px] md:px-9 sm:px-5">
         <Row className="grid grid-cols-2 space-x-4 space-y-8 sm:space-y-4 sm:grid-cols-4 lg:grid-cols-6">
           <Col className="mt-8 space-y-2">
             <img src={Logo} alt="Logo" className="w-40"  />
@@ -87,7 +87,7 @@ const Footer = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, assumenda.</p>            
           </Col>
         </Row>
-        <h4 className="text-xl font-bold text-center capitalize py-11 text-Header">copyright &copy 2023 all right reserved|fendi bosslyn</h4>
+        <h4 className="text-xl font-bold text-center capitalize py-11 text-Header">copyright &copy; 2023 all right reserved|fendi bosslyn</h4>
       </Row>
     </Container>
   );

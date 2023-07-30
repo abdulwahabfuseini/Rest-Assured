@@ -8,9 +8,10 @@ import Blog from './pages/Blog'
 import Offer from './pages/Offer'
 import ContactUs from './pages/ContactUs'
 import PageNotFound from './pages/PageNotFound'
-import SignIn from './pages/SignIn'
-import Register from './pages/Register'
-import Booking from './pages/Booking'
+import SignIn from './pages/Account/SignIn'
+import Register from './pages/Account/Register'
+import Booking from './pages/Account/Booking'
+
 
 
 
@@ -18,7 +19,7 @@ const App = () => {
   return (
     <>
     <Routes>
-      <Route path='/Rest-Assured' element={<Home />} />
+      <Route exact path='/Rest-Assured' element={<Home />} />
       <Route path='about-us' element={<AboutUs />} />
       <Route path='gallery' element={<Gallery />} />
       <Route path='restaurants' element={<Restaurants />} />

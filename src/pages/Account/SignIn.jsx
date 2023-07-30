@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../Layout/Layout";
+import Layout from "../../Layout/Layout";
 import { Button, Checkbox, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ const SignIn = () => {
   const navigate = useNavigate()
   
   const handleSubmit = (values) => {
-    navigate("/", {replace: true})
+    navigate("/Rest-Assured", {replace: true})
   };
 
   return (

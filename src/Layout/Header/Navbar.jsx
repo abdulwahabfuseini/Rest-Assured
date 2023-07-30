@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navigation } from "../../assets/Data";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CgUser } from "react-icons/cg";
 import MobileNav from "./MobileNav";
 import Logo from "../../assets/images/Logo1.png";
@@ -19,7 +19,7 @@ const Navbar = () => {
     <div>
       <nav
         className={`${
-          sticky ? "bg-dry text-white h-14" : "h-16  bg-white shadow-md"
+          sticky ? "bg-dry text-white h-16" : "h-14  bg-white shadow-md"
         } fixed top-0 left-0 z-50 w-full py-3 px-6 flex items-center justify-between`}
       >
         <div className="logo">
@@ -33,7 +33,7 @@ const Navbar = () => {
                 className="font-medium list-none text-md hover:text-blue-800"
                 key={index}
               >
-                <Link to={path}>{display}</Link>
+                <NavLink to={path}>{display}</NavLink>
               </li>
             );
           })}

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../Layout/Layout";
+import Layout from "../../Layout/Layout";
 import { Button, Form, Input } from "antd";
 import { Link } from "react-router-dom";
 
@@ -39,6 +39,7 @@ const Booking = () => {
                 { whitespace: false },
                 { min: 8 },
               ]}
+              hasFeedback
             >
               <Input
                 placeholder="Enter booking number"
@@ -47,12 +48,15 @@ const Booking = () => {
                 type="number"
               />
             </Form.Item>
-            <Button
+           <Form.Item className="grid place-items-center">
+           <Button
+             type="primary"
               htmlType="submit"
-              className="w-full h-12 pt-3 border sm:w-80 sm:mx-32 sm:mt-14 cursor-point border-neutral-300"
+              className="w-full h-12 pt-3 bg-blue-400 border sm:w-80 sm:mt-14 cursor-point border-neutral-300"
             >
               Search
             </Button>
+           </Form.Item>
           </Form>
           <Link to="/sign-in">
             <p className="pt-20 text-center underline">
