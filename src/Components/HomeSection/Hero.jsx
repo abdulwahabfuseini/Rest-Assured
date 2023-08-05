@@ -1,40 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper";
-import { HeroSlide } from "../../assets/Data";
-import {
-  // BiCalendar,
-  // BiSolidEditLocation,
-  BiSolidLeftArrow,
-  BiSolidRightArrow,
-  // BiUser,
-} from "react-icons/bi";
-// import { Button, Checkbox, Form, Input } from "antd";
+import { Autoplay } from "swiper";
+import { HeroSlide, ServiceProvide } from "./HomeData";
+import { FaPlusCircle } from "react-icons/fa";
+import { BsChevronCompactRight } from "react-icons/bs";
+import { AiOutlineUser } from "react-icons/ai";
+import { Card, DatePicker, Form } from "antd";
 
 const Hero = () => {
-  const [nextEl, setNextEl] = useState(null);
-  const [prevEl, setPrevtEl] = useState(null);
-
   return (
     <>
-      <Container>
-        <Row className="">
-          <Col className="relative">
+      <Container className="w-full h-full py-[74px] relative">
+        <Row className="flex flex-col items-center sm:flex-row">
+          <Col className="w-full sm:w-1/2 lg:w-9/12">
             <Swiper
-              navigation={{ nextEl, prevEl }}
               spaceBetween={0}
               slidesPerView={1}
               loop={true}
               speed={1000}
-              modules={[Autoplay, Navigation]}
+              modules={[Autoplay]}
               autoplay={{ delay: 6000, disableOnInteraction: false }}
-              className="w-full  bg-dry h-[400px]  sm:h-[200px] md:h-[520px]  lg:h-screen"
+              className="w-full h-[350px] sm:h-[420px]"
             >
               {HeroSlide.map((slide, index) => (
                 <SwiperSlide key={index}>
                   <img
-                    src={slide.image}
+                    src={slide.cover}
                     alt=""
                     className="object-cover w-full h-full"
                   />
@@ -42,20 +34,50 @@ const Hero = () => {
               ))}
             </Swiper>
           </Col>
-          <Col className="relative">
-            <button
-              ref={(node) => setPrevtEl(node)}
-              className="absolute z-30 p-2 text-white border-4 rounded-full cursor-pointer border-glass -top-52 md:-top-72 sm:-top-28 left-4 md:left-10 lg:-top-96 bg-Header"
-            >
-              <BiSolidLeftArrow />
-            </button>
-            <button
-              ref={(node) => setNextEl(node)}
-              className="absolute z-30 p-2 text-white border-4 rounded-full cursor-pointer border-glass -top-52 md:-top-72 sm:-top-28 right-4 md:right-10 lg:-top-96 bg-Header"
-            >
-              <BiSolidRightArrow />
-            </button>
+          <Col className="w-full sm:w-1/2 lg:w-3/12">
+            <Card className="rounded-none pattern">
+              <h1 className="py-5 text-2xl font-bold text-center text-white">
+                Your Stay
+              </h1>
+              <Form>
+                <Col className="flex items-center gap-2 text-white">
+                  <DatePicker  className="order-2 w-64 py-2 text-white border-2 border-yellow-300 bg-glass backdrop-blur-lg h-14"/>
+                  <DatePicker  className="order-2 w-64 py-2 text-white border-2 border-yellow-300 bg-glass backdrop-blur-lg h-14"/>
+                </Col>
+                <Col className="flex items-center justify-between gap-4 p-4 my-3 text-white border-2 border-yellow-300 rounded-md bg-glass backdrop-blur-lg">
+                  <input className="w-full bg-transparent border-none outline-none focus:none" />
+                  <AiOutlineUser className="w-6 h-6 font-bold text-yellow-400" />
+                </Col>
+                <Col
+                  type="primary"
+                  className="flex items-center justify-center w-full gap-6 p-3 my-10 font-semibold bg-yellow-400 border-none"
+                >
+                  <h1>FIND A ROOM</h1>
+                  <BsChevronCompactRight className="text-lg " />
+                </Col>
+                <Col
+                  type="primary"
+                  className="flex items-center gap-2 p-3 cursor-pointer"
+                >
+                  <FaPlusCircle className="text-lg text-yellow-400" />
+                  <h5 className="font-semibold text-white">Add special code</h5>
+                </Col>
+              </Form>
+            </Card>
           </Col>
+        </Row>
+        <Row className="flex flex-wrap items-center justify-center w-full h-full gap-12 py-8 lg:gap-24 lg:py-20">
+          {
+            ServiceProvide.map((service, index) => {
+              const {cover, name} = service
+              return(
+                <Col key={index} className="flex flex-col items-center space-y-4 lg:space-y-8">
+                <img src={cover} alt="" className="w-12 h-12 sm:w-16 sm:h-16" />
+                <p className="text-sm font-semibold sm:text-lg">{name}</p>
+              </Col>
+              )
+            })
+          }
         </Row>
       </Container>
     </>

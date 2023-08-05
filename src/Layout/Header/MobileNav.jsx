@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Navigation } from "../../assets/Data";
+import { Navigation } from "../../Layout/Data";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,7 @@ const MobileNav = () => {
   };
   return (
     <>
-      <nav className="relative pt-7">
+      <nav className="relative pt-7 lg:hidden">
         <div onClick={() => setIsOpen(true)}>
           <FaBars className="w-6 font-bold cursor-pointer h-7" />
         </div>
@@ -50,7 +50,7 @@ const MobileNav = () => {
           animate={isOpen ? "visible" : ""}
           className={`${
             isOpen ? "left-0" : "left-full"
-          } fixed top-0 bottom-0 flex flex-col items-center justify-center w-full bg-Header text-white transition-all duration-500`}
+          } fixed top-0 bottom-0 flex flex-col items-center justify-center w-full text-white transition-all duration-500 pattern`}
         >
           <div
             onClick={() => setIsOpen(false)}
@@ -63,7 +63,7 @@ const MobileNav = () => {
               const { display, path } = link;
               return (
                 <li
-                  className="font-medium list-none text-md hover:text-dry"
+                  className="font-medium list-none text-md hover:text-yellow-400"
                   key={index}
                 >
                   <Link to={path}>{display}</Link>

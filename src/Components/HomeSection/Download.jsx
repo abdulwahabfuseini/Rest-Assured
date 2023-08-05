@@ -1,35 +1,59 @@
-import React from 'react'
-import { FaCheck } from 'react-icons/fa'
-import Appstore from "../../assets/images/download2.jpg"
-import Google from "../../assets/images/download1.png"
-import Phone from "../../assets/images/download3.png"
+import React from "react";
+import { FaCheck } from "react-icons/fa";
+import { DownloadApp } from "./HomeData";
 
 const Download = () => {
   return (
-    <div className='w-full  sm:h-[450px] h-[600px] bg-Header text-white px-4 sm:px-6 lg:px-20 py-4 mb-32 overflow-hidden'>
-        <div className=' flex flex-col items-center sm:flex-row gap-1'>
-            <div className='w-full sm:w-3/5'>
-                <h5>Download our app</h5>
-                <h1 className='text-3xl mb-4'>Get our Template App <br /> <span>For Your Mobile</span></h1>
-                <div className='space-y-1'>
-                    <p className='flex items-center md:text-lg text-sm'><FaCheck className='w-3 h-2' /><span>Find nearby hotel in your network with template</span></p>
-                    <p className='flex items-center md:text-lg text-sm'><FaCheck className='w-3 h-2' /><span>Get paperless confirmation</span></p>
-                    <p className='flex items-center md:text-lg text-sm'><FaCheck className='w-3 h-2' /><span>Make changes whenever, wherever</span></p>
-                    <p className='flex items-center md:text-lg text-sm'><FaCheck className='w-3 h-2' /><span>24/7 customer service in more than 40 languages</span></p>
-                    <p className='flex items-center md:text-lg text-sm'><FaCheck className='w-3 h-2' /><span>No booking or credit card fees</span></p>
-                    <p className='flex items-center md:text-lg text-sm'><FaCheck className='w-3 h-2' /><span>Add your own reviews and photos</span></p>
+    <div className="w-full lg:h-[470px] h-full text-white px-4 sm:px-6 lg:px-20 py-4 mb-32 overflow-hidden pattern"  data-aos="fade-left">
+      {DownloadApp.map((app, index) => {
+        return (
+          <div key={index} className="flex flex-col gap-1 sm:flex-row"  data-aos="fade-up">
+            <div className="w-full sm:w-1/2">
+              <h1>{app.title}</h1>
+              <h1 className="my-2 text-3xl">{app.SubTile1}</h1>
+              <h1 className="text-3xl m">{app.SubTile2}</h1>
+              <div className="mt-4 space-y-1">
+                {app.procedure.map((item, index) => {
+                  return (
+                    <p
+                      key={index}
+                      className="flex items-center text-sm md:text-lg"
+                      data-aos="fade-down"
+                    >
+                      <FaCheck className="w-3 h-2" />
+                      <span>{item.display}</span>
+                    </p>
+                  );
+                })}
+                <div className="flex items-center gap-2 py-10">
+                  {app.get.map((store, index) => {
+                    return (
+                      <span
+                        key={index}
+                        className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg"
+                      >
+                        <p className="text-2xl">{store.icon}</p>
+                        <h4>{store.name}</h4>
+                      </span>
+                    );
+                  })}
                 </div>
-                <div className='flex items-center gap-2 py-3'>
-                    <img src={Appstore} alt=""  className='w-28 h-8 object-cover'/>
-                    <img src={Google} alt="" className='w-28 h-8 object-cover'/>
-                </div>
+              </div>
             </div>
-            <div className='w-full sm:w-2/5 py-0'>
-                <img src={Phone} alt="" className='w-full'/>
+            <div className="flex items-center justify-center w-full py-0 sm:w-1/2"  data-aos="fade-left">
+              {app.mobile.map((smart, index) => {
+                return (
+                  <div key={index}>
+                    <img src={smart.phone} alt="" />
+                  </div>
+                );
+              })}
             </div>
-        </div>
+          </div>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default Download
+export default Download;

@@ -1,93 +1,117 @@
 import React from "react";
-import footerBg from "../assets/images/FooterBg.jpg";
 import { Col, Container, Row } from "reactstrap";
-import { FootLinks } from "../assets/Data";
+import { FootLinks } from "../Layout/Data";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo1.png";
 import {
+  FaApple,
+  FaChevronDown,
   FaFacebookF,
+  FaGooglePlay,
   FaInstagram,
+  FaLinkedinIn,
   FaTwitter,
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+
 
 const Footer = () => {
   return (
-    <Container className="relative w-full h-[740px] sm:h-52 lg:h-[350px] bg-main">
-      <Row>
-        <img
-          src={footerBg}
-          alt="FooterBg"
-          className="object-cover w-full h-[740px]  sm:h-[560px] lg:h-[350px]"
-        />
-      </Row>
-      <Row className="absolute top-0 left-0 w-full h-full py-3 text-white bg-transparents lg:h-[350px] sm:h-[560px] md:px-9 sm:px-5">
-        <Row className="grid grid-cols-2 space-x-4 space-y-8 sm:space-y-4 sm:grid-cols-4 lg:grid-cols-6">
-          <Col className="mt-8 space-y-2">
-            <img src={Logo} alt="Logo" className="w-40"  />
-            <h1> Place to have a better rest </h1>
-          </Col> 
-          <Col className="space-y-3 ">
-            <heade className="text-lg">Follow Us</heade>
-            <div className="flex gap-3">
-              <FaFacebookF className="w-6 h-6 " />
-              <FaTwitter className="w-6 h-6 " />
-              <FaInstagram className="w-6 h-6 " />
-            </div>
-            <div className="flex gap-3">
-              <FaYoutube className="w-6 h-6 " />
-              <FaWhatsapp className="w-6 h-6 " />
-              <FaWhatsapp className="w-6 h-6 " />
-            </div>
-          </Col>
+    <Container className="relative w-full h-full text-white sm:px-6 md:px-4 lg:px-16 pattern">
+      <Row className="hidden sm:grid grid-cols-4">
+        <>
           {FootLinks.map((foot, index) => {
-            const { title } = foot;
             return (
-              <Col>
-                <header key={index} className="">
-                  <h1 className="relative pb-2 text-lg text-white md:text-xl">
-                    {title}
-                  </h1>
-                </header>
-                <ul className="space-y-2">
-                  {foot.Links.map((item, index) => {
-                    const { display, path } = item;
-                    return (
-                      <li
-                        key={index}
-                        className="cursor-pointer hover:text-red-500"
-                      >
-                        <Link to={path}>{display}</Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-                <ul className="space-y-2">
-                  {foot.Links.map((item, index) => {
-                    const { Location, location, Tel, Email } = item;
-                    return (
-                      <li
-                        key={index}
-                        className="cursor-pointer hover:text-red-500"
-                      >
-                        <p>{Location}</p>
-                        <p>{location}</p>
-                        <a href={`Tel:${Tel}`}>{Tel}</a>
-                        <a href={`mailto:${Email}`}>{Email}</a>
-                      </li>
-                    );
-                  })}
-                </ul>
+              <Col key={index}>
+                <h1 className="relative pt-8 mb-2 text-xl font-semibold before:absolute before:-bottom-1 before:left-0 before:w-8 before:h-1 before:bg-white">
+                  {foot.title}
+                </h1>
+                {foot.Links.map((items, index) => {
+                  return (
+                    <ul key={index} className="py-1">
+                      <h6 className="no-underline list-none cursor-pointer">
+                        <Link to={items.path}>{items.display}</Link>
+                      </h6>
+                    </ul>
+                  );
+                })}
               </Col>
             );
           })}
-          <Col>
-            <h1>Recent Post</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, assumenda.</p>            
-          </Col>
+        </>
+      </Row>
+      <Row className="grid sm:hidden">
+        <>
+          {FootLinks.map((foot, index) => {
+            return (
+              <Col key={index}>
+                <Accordion>
+                  <AccordionSummary
+                    expandIcon={<FaChevronDown className="text-white"/>}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    className=" rounded-none pattern shadow-lg"
+                  >
+                    <Typography fontSize={22} className="text-white py-2">{foot.title}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      {foot.Links.map((items, index) => {
+                        return (
+                          <ul key={index} className="py-1">
+                            <h6 className="no-underline list-none cursor-pointer">
+                              <Link to={items.path}>{items.display}</Link>
+                            </h6>
+                          </ul>
+                        );
+                      })}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              </Col>
+            );
+          })}
+        </>
+      </Row>
+      <Row>
+        <Row className="flex flex-col items-center justify-between mt-8 px-12 sm:px-0 sm:flex-row">
+          <img src={Logo} alt="logo" className="sm:w-40 lg:w-64 lg:h-16" />
+          <span>
+            <h1 className="py-4 text-xl">Connect with us</h1>
+            <Col className="flex items-center gap-2">
+              <FaFacebookF className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
+              <FaTwitter className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
+              <FaInstagram className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
+              <FaYoutube className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
+              <FaWhatsapp className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
+              <FaLinkedinIn className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1 " />
+            </Col>
+          </span>
+          <span>
+            <h1 className="py-4 text-xl">Download our App</h1>
+            <Col className="flex items-center gap-4">
+              <span className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg">
+                <FaApple className="w-6 h-6 " />
+                <h4>iOS</h4>
+              </span>
+              <span className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg">
+                <FaGooglePlay className="w-6 h-6" />
+                <h4>Andriod</h4>
+              </span>
+            </Col>
+          </span>
         </Row>
-        <h4 className="text-xl font-bold text-center capitalize py-11 text-Header">copyright &copy; 2023 all right reserved|fendi bosslyn</h4>
+      </Row>
+      <Row className="py-8 mt-10 text-center border-t-4 px-2">
+        <h1 className="text-xl">
+          Rest Assured Hotel{" "}
+          <span>Copyright &copy; 2023 All Rights Reserved</span>
+        </h1>
       </Row>
     </Container>
   );

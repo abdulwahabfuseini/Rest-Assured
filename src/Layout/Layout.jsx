@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="text-black bg-white">
+      <div className="relative text-black bg-white">
         <Navbar />
         {children}
         <Footer />

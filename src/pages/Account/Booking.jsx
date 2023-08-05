@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Booking = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center w-full h-screen px-auto sm:pt-80 md:pt-0">
+      <div className="flex flex-col items-center justify-center w-full h-full px-auto sm:py-40 md:py-60">
         <h1 className="px-10 pb-10 text-xl font-bold">Manage my Booking</h1>
         <div>
           <Form layout="vertical" className="sm:w-[600px] sm:px-0 px-5">
@@ -59,7 +59,7 @@ const Booking = () => {
            </Form.Item>
           </Form>
           <Link to="/sign-in">
-            <p className="pt-20 text-center underline">
+            <p className="pt-20 text-center underline text-lg sm:text-xl">
               Already have an account? Log in to manage all your bookings
             </p>
           </Link>

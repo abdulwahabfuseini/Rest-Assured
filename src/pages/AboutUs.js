@@ -1,19 +1,17 @@
 import React from 'react'
 import Layout from '../Layout/Layout'
 import HeadTitle from "../Components/HeadTitle"
-import AboutCard from '../Components/About/AboutCard'
-import Staff from '../Components/About/Staff'
+import AboutCard from '../Components/AboutSection/AboutCard'
+import Content from '../Components/AboutSection/Content'
 
 
 const AboutUs = () => {
   return (
     <Layout>
-       <div>
+       <div className='w-full h-full overflow-hidden'>
         <HeadTitle />
-      </div>
-      <div className="w-full h-full ">
         <AboutCard />
-        <Staff />
+        <Content />
       </div>
     </Layout>
   )

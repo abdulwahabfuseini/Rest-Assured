@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../Layout/Layout'
 import HeadTitle from '../Components/HeadTitle'
-import Ouroffer from '../Components/Ouroffer'
+import OfferItem from '../Components/OfferSection/OfferItem'
 
 const Offer
  = () => {
@@ -9,7 +9,7 @@ const Offer
     <Layout>
       <div className="w-full h-full mb-40">
         <HeadTitle />
-        <Ouroffer />
+        <OfferItem />
       </div>
     </Layout>
   )

@@ -146,7 +146,7 @@ const Connect = () => {
           </Col>
           <Col>
             <Form.Item
-              label="message"
+              label="Message"
               name="message"
               rules={[
                 {

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../Layout/Layout";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { Col } from "reactstrap";
 
@@ -14,35 +14,13 @@ const Register = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col items-center w-full lg:h-[1400px] h-[1100px] pt-24 sm:pt-80 md:pt-36">
-        <h1 className="px-10 pb-10 text-xl text-center font--bold">
+      <div className="py-40 sm:py-40">
+        <h1 className="pb-10 sm:text-xl text-center font-bold capitalize">
           Sign up to enjoy member rate when booking{" "}
         </h1>
         <div>
-          <Form
-            onFinish={handleSubmit}
-            form={form}
-            layout="vertical"
-            className="sm:w-[750px] w-96 sm:px-0 px-5"
-          >
-            <Col className="flex flex-col items-center gap-4 sm:flex-row">
-              <Form.Item
-                label="Title"
-                name="title"
-                rules={[
-                  {
-                    required: true,
-                    type: "text",
-                    message: "Please Select Title",
-                  },
-                ]}
-              >
-                <Select placeholder="Select Title">
-                  <Select.Option value="Mr">Mr</Select.Option>
-                  <Select.Option value="Mrs">Mrs</Select.Option>
-                  <Select.Option value="Miss">Miss</Select.Option>
-                </Select>
-              </Form.Item>
+          <Form onFinish={handleSubmit} form={form} layout="vertical" className=" mx-auto sm:max-w-4xl lg:max-w-3xl px-3 sm:px-6">
+            <Col className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Form.Item
                 name="Fname"
                 label="First Name"
@@ -59,7 +37,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="Enter First Name"
-                  className="h-12 cursor-pointer w-80"
+                  className="h-12 cursor-pointer w-full"
                 />
               </Form.Item>
               <Form.Item
@@ -78,11 +56,9 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="Enter Last Name"
-                  className="h-12 cursor-pointer w-80"
+                  className="h-12 cursor-pointer"
                 />
               </Form.Item>
-            </Col>
-            <Col className="flex flex-col items-center gap-3 sm:flex-row">
               <Form.Item
                 name="email"
                 label="Email"
@@ -98,7 +74,7 @@ const Register = () => {
                 <Input
                   type="email"
                   placeholder="Enter Email Address"
-                  className="h-12 cursor-pointer sm:w-96 w-80"
+                  className="h-12 cursor-pointer"
                 />
               </Form.Item>
               <Form.Item
@@ -117,11 +93,9 @@ const Register = () => {
                   type="number"
                   name="number"
                   placeholder="(000) 000 000 0000"
-                  className="h-12 cursor-pointer sm:w-96 w-80"
+                  className="h-12 cursor-pointer"
                 />
               </Form.Item>
-            </Col>
-            <Col className="flex flex-col items-center gap-3 sm:flex-row">
               <Form.Item
                 label="Password"
                 name="password"
@@ -137,7 +111,7 @@ const Register = () => {
                 <Input.Password
                   type="password"
                   placeholder="Enter Password"
-                  className="h-12 cursor-pointer sm:w-96 w-80"
+                  className="h-12 cursor-pointer"
                 />
               </Form.Item>
               <Form.Item
@@ -164,26 +138,25 @@ const Register = () => {
                 <Input.Password
                   type="password"
                   placeholder="Confirm Password"
-                  className="h-12 cursor-pointer sm:w-96 w-80"
+                  className="h-12 cursor-pointer"
                 />
               </Form.Item>
             </Col>
-            <Col className="flex flex-col items-center gap-3 sm:flex-row"></Col>
-            <Form.Item className="grid place-items-center">
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="w-full h-12 pt-3 bg-blue-600 border sm:w-80 sm:mt-8 cursor-point border-neutral-300"
-            >
-              Submit
-            </Button>
-            </Form.Item>
+            <Col className="px-3">
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="h-12 w-full  bg-blue-600 border sm:mt-8 cursor-point border-neutral-300 text-lg"
+              >
+                Submit
+              </Button>
+            </Col>
+            <Link to="/sign-in">
+              <p className="pt-4 text-center text-lg sm:text-xl underline">
+                Already have an account? Log in
+              </p>
+            </Link>
           </Form>
-          <Link to="/sign-in">
-            <p className="pt-4 text-center underline">
-              Already have an account? Log in
-            </p>
-          </Link>
         </div>
       </div>
     </Layout>

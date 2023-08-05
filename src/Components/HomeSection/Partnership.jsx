@@ -1,30 +1,66 @@
 import React from "react";
-import { OurPartnership } from "../../assets/Data";
-
+import { OurPartnership } from "./HomeData";
+import { Autoplay, Pagination } from "swiper";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Col, Row } from "reactstrap";
 
 const Partnership = () => {
   return (
-    <div className="w-full lg:h-[900px] sm:h-[880px] h-[1700px] mb-10">
+    <div className="w-full h-[700px] mb-10">
       <div className="relative">
-        <header className="h-40 py-5 text-3xl text-center bg-green-200">
+        <header className="w-full py-5 text-3xl text-center text-white h-44 pattern"  data-aos="fade-right">
           PartnerShips
         </header>
-        <div className="absolute w-full h-full px-3 top-24 sm:px-8 lg:px-20">
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-2">
-            {OurPartnership.map((item, index) => (
-              <div key={index} className="p-2 pb-4 bg-white shadow-lg">
-                <img
-                  src={item.image}
-                  alt="/"
-                  className="object-cover w-full h-60"
-                />
-                <h1 className="py-2 text-xl font-semibold ">
-                  {item.company}
-                </h1>
-                <p>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div className="absolute w-full h-full px-3 top-24 sm:px-8 lg:px-10"  data-aos="fade-up">
+          <Swiper
+            spaceBetween={10}
+            loop={true}
+            speed={3000}
+            pagination={{ clickable: true }}
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 6000, disableOnInteraction: false }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              400: {
+                slidesPerView: 1.4,
+              },
+              600: {
+                slidesPerView: 2.4,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 4,
+              },
+            }}
+          >
+            <Col>
+              {OurPartnership.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    className="flex items-center justify-center pb-8 mb-24 text-center border-2 border-green-100 shadow-md"
+                  >
+                    <Row>
+                      <img
+                        src={item.cover}
+                        alt="/"
+                        className="object-cover w-full h-60"
+                      />
+                      <h1 className="py-2 text-xl font-semibold ">
+                        {item.company}
+                      </h1>
+                      <p>{item.desc}</p>
+                    </Row>
+                  </SwiperSlide>
+                );
+              })}
+            </Col>
+          </Swiper>
         </div>
       </div>
     </div>
