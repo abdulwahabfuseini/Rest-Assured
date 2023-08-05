@@ -20,9 +20,9 @@ Aos.init();
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/Rest-Assured">
       <Routes>
-        <Route exact path="/Rest-Assured" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="review" element={<Review />} />
