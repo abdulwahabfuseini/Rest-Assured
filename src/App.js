@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
@@ -20,7 +20,7 @@ Aos.init();
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Routes>
         <Route exact path="/Rest-Assured" element={<Home />} />
         <Route path="about-us" element={<AboutUs />} />
@@ -35,7 +35,7 @@ const App = () => {
         <Route path="Offerpage/:id" element={<SinglePage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </Router>
+    </>
   );
 };
 

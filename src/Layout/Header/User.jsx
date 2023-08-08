@@ -11,6 +11,7 @@ import PersonAdd from "@mui/icons-material/PersonAdd";
 import Person from "@mui/icons-material/Person";
 import Settings from "@mui/icons-material/Settings";
 import { Link } from "react-router-dom";
+import { PersonOutlined } from "@mui/icons-material";
 
 const User = () => {
   const [openProfile, setOpenProfile] = useState(null);
@@ -36,7 +37,9 @@ const User = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+            <Avatar sx={{ width: 32, height: 32 }}>
+              <PersonOutlined />
+            </Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -70,7 +73,8 @@ const User = () => {
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
           <MenuItem>
-          <h1 className="text-xl">Account</h1></MenuItem>
+            <h1 className="text-xl">Account</h1>
+          </MenuItem>
           <Divider />
           <Link to="/sign-in">
             <MenuItem>

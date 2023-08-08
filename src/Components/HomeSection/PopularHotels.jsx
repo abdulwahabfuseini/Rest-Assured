@@ -54,7 +54,6 @@ const Popular = () => {
                 className="mb-12 text-center bg-transparent border-2 shadow-sm border-slate-200"
               >
                 <HotelBook
-                  key={index}
                   name={hotel.name}
                   cover={hotel.cover}
                   price={hotel.price}

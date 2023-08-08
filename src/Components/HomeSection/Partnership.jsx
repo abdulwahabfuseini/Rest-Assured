@@ -7,12 +7,12 @@ import { Col, Row } from "reactstrap";
 
 const Partnership = () => {
   return (
-    <div className="w-full h-[700px] mb-10">
+    <div className="w-full h-screen">
       <div className="relative">
-        <header className="w-full py-5 text-3xl text-center text-white h-44 pattern"  data-aos="fade-right">
+        <header className="w-full py-5 text-3xl text-center text-white h-44 pattern"  >
           PartnerShips
         </header>
-        <div className="absolute w-full h-full px-3 top-24 sm:px-8 lg:px-10"  data-aos="fade-up">
+        <div className="absolute w-full h-full px-3 top-24 sm:px-8 lg:px-10" >
           <Swiper
             spaceBetween={10}
             loop={true}
