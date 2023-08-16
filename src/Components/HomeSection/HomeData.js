@@ -213,7 +213,7 @@ export const OurPartnership = [
   },
   {
     id: 3,
-    cover: Part2,
+    cover: Plane,
     company: "Company Name",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
   },
@@ -231,7 +231,7 @@ export const OurPartnership = [
   },
   {
     id: 7,
-    cover: Part3,
+    cover: Plane,
     company: "Company Name",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
   },

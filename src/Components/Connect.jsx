@@ -59,9 +59,9 @@ const Connect = () => {
   };
 
   return (
-    <div className="w-full h-full px-8 py-10 sm:px-8 md:px-12 lg:px-20">
-      <div className="flex flex-col space-y-10 sm:space-y-0 sm:flex-row sm:gap-8 md:gap-14 lg:gap-20">
-        <Form onFinish={handleSubmit} layout="vertical" className="sm:w-3/5 ">
+    <div className="w-full h-full px-8 py-10 sm:px-8 lg:px-20">
+      <div className="flex flex-col gap-y-10 lg:flex-row sm:gap-8 lg:gap-20">
+        <Form onFinish={handleSubmit} layout="vertical" className="lg:w-3/5 ">
           <Col className="grid grid-cols-1 sm:gap-2 md:gap-4 sm:grid-cols-2">
           <Form.Item
               label="Full Name"
@@ -175,7 +175,7 @@ const Connect = () => {
             </Button>
           </Col>
         </Form>
-        <div className="space-y-5 lg:px-6 sm:w-2/5">
+        <div className="space-y-5 lg:px-6 lg:w-2/5">
           <Col>
             <h1 className="pb-2 text-xl font-bold">Visit our loaction</h1>
             <p className="text-sm">

@@ -29,7 +29,7 @@ const AboutCard = () => {
             );
           })}
         </Row>
-        <Row className="flex flex-col space-y-1 sm:flex-row">
+        <Row className="flex flex-col sm:flex-row gap-y-5">
           {AboutData.map((items, index) => {
             const { title2, desc, Cover2 } = items;
             return (
@@ -51,7 +51,7 @@ const AboutCard = () => {
             );
           })}
         </Row>
-        <Row className="flex flex-col sm:flex-row">
+        <Row className="flex flex-col sm:flex-row gap-y-5">
           {AboutData.map((items, index) => {
             const { title3, desc, Cover3 } = items;
             return (

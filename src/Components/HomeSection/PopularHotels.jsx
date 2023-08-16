@@ -63,7 +63,7 @@ const Popular = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex items-center justify-center gap-6 py-10">
+          <div className="flex items-center justify-center gap-6 py-4">
             <button ref={(node) => setPrevtEl(node)}>
               <FaChevronLeft className="w-8 h-8 p-2 text-lg font-bold text-white rounded-full sm:w-10 sm:h-10 pattern" />
             </button>

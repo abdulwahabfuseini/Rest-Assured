@@ -41,8 +41,8 @@ const Hero = () => {
               </h1>
               <Form>
                 <Col className="flex items-center gap-2 text-white">
-                  <DatePicker  className="order-2 w-64 py-2 text-white border-2 border-yellow-300 bg-glass backdrop-blur-lg h-14"/>
-                  <DatePicker  className="order-2 w-64 py-2 text-white border-2 border-yellow-300 bg-glass backdrop-blur-lg h-14"/>
+                  <DatePicker className="order-2 w-64 py-2 text-white border-2 border-yellow-300 bg-glass backdrop-blur-lg h-14"/>
+                  <DatePicker className="order-2 w-64 py-2 text-white border-2 border-yellow-300 bg-glass backdrop-blur-lg h-14"/>
                 </Col>
                 <Col className="flex items-center justify-between gap-4 p-4 my-3 text-white border-2 border-yellow-300 rounded-md bg-glass backdrop-blur-lg">
                   <input className="w-full bg-transparent border-none outline-none focus:none" />
@@ -66,7 +66,7 @@ const Hero = () => {
             </Card>
           </Col>
         </Row>
-        <Row className="flex flex-wrap items-center justify-center w-full h-full gap-12 py-8 lg:gap-24 lg:py-20">
+        <Row className="flex flex-wrap items-center justify-center w-full h-full gap-12 py-8 sm:gap-20 sm:py-14 lg:gap-24 lg:py-20">
           {
             ServiceProvide.map((service, index) => {
               const {cover, name} = service

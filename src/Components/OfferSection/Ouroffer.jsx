@@ -3,7 +3,7 @@ import { Badge, Button, Card, List, Typography } from "antd";
 import { Link } from "react-router-dom";
 import Skeleton from "@mui/material/Skeleton";
 
-const Ouroffer = ({ item: { id, title, cover, discount, desc } }) => {
+const Ouroffer = ({ item: { title, cover, discount, desc } }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Ouroffer = ({ item: { id, title, cover, discount, desc } }) => {
       <Card
         title={title}
         actions={[
-          <Link to={`/Offerpage/${id}`}>
+          <Link to={`/Offerpage/${title}`}>
             <Button
               type="primary"
               className="text-white pattern hover:ring-2 h-10"

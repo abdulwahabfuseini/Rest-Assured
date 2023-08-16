@@ -22,16 +22,16 @@ const Partnership = () => {
             autoplay={{ delay: 6000, disableOnInteraction: false }}
             breakpoints={{
               0: {
-                slidesPerView: 1,
+                slidesPerView: 1.3,
               },
               400: {
-                slidesPerView: 1.4,
+                slidesPerView: 1.5,
               },
               600: {
                 slidesPerView: 2.4,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 2.4,
               },
               1024: {
                 slidesPerView: 4,
@@ -49,7 +49,7 @@ const Partnership = () => {
                       <img
                         src={item.cover}
                         alt="/"
-                        className="object-cover w-full h-60"
+                        className="object-cover w-full h-40 sm:h-60"
                       />
                       <h1 className="py-2 text-xl font-semibold ">
                         {item.company}

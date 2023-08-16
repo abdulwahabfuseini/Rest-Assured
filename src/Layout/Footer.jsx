@@ -23,7 +23,7 @@ import Typography from "@mui/material/Typography";
 const Footer = () => {
   return (
     <Container className="relative w-full h-full text-white sm:px-6 md:px-4 lg:px-16 pattern">
-      <Row className="hidden sm:grid grid-cols-4">
+      <Row className="hidden grid-cols-4 sm:grid">
         <>
           {FootLinks.map((foot, index) => {
             return (
@@ -55,9 +55,9 @@ const Footer = () => {
                     expandIcon={<FaChevronDown className="text-white"/>}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                    className=" rounded-none pattern shadow-lg"
+                    className="rounded-none shadow-lg pattern"
                   >
-                    <Typography fontSize={22} className="text-white py-2">{foot.title}</Typography>
+                    <Typography fontSize={22} className="py-2 text-white">{foot.title}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
@@ -79,8 +79,8 @@ const Footer = () => {
         </>
       </Row>
       <Row>
-        <Row className="flex flex-col items-center justify-between mt-8 px-12 sm:px-0 sm:flex-row">
-          <img src={Logo} alt="logo" className="sm:w-40 lg:w-64 lg:h-16" />
+        <Row className="flex flex-col items-center justify-between px-12 mt-8 sm:px-0 sm:flex-row">
+          <img src={Logo} alt="logo" className="object-contain sm:w-40 lg:w-64 lg:h-16" />
           <span>
             <h1 className="py-4 text-xl">Connect with us</h1>
             <Col className="flex items-center gap-2">
@@ -107,10 +107,11 @@ const Footer = () => {
           </span>
         </Row>
       </Row>
-      <Row className="py-8 mt-10 text-center border-t-4 px-2">
+      <Row className="px-2 py-8 mt-10 text-center border-t-4">
         <h1 className="text-xl">
           Rest Assured Hotel{" "}
           <span>Copyright &copy; 2023 All Rights Reserved</span>
+          <h1 className="py-4 text-md">Created by: Fuseini Abdul Wahab</h1>
         </h1>
       </Row>
     </Container>
