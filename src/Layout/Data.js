@@ -4,7 +4,7 @@ export const Navigation = [
     { 
       id: 1,
       display: "Overview",
-      path: "/Rest-Assured",
+      path: "/",
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ export const FootLinks = [
       id: 1,
       title: "Company",
       Links: [
-        { display: "Home", path: "/Rest-Assured" },
+        { display: "Home", path: "/" },
         { display: "About Us", path: "/about-us" },
         { display: "Gellery", path: "/gallery" },
         { display: "Blog", path: "/blog" },
@@ -69,7 +69,7 @@ export const FootLinks = [
         { display: "Meeting & Events" },
         { display: "See our Offer", path: "/offer" },
         { display: "See our Top Hotels", path: "/review" },
-        { display: "Book now", path: "/Rest-Assured"},
+        { display: "Book now", path: "/"},
       ],
     },
     {

@@ -21,7 +21,7 @@ const Navbar = () => {
           sticky ? "text-white h-16 sm:h-18 pattern shadow-lg" : "h-14 sm:h-16 bg-white shadow-md"
         } fixed top-0 left-0 z-50 w-full py-3 px-6 flex items-center justify-between`}
       >
-        <Link to="/Rest-Assured">
+        <Link to="/">
         <div className="logo">
           <img src={Logo} alt="Logo" className="object-contain sm:w-64 h-9 sm:h-12" />
         </div>
