@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../Layout/Layout";
+import Layout from "../../layout/Layout";
 import { Button, Form, Input } from "antd";
 import { Link } from "react-router-dom";
 
@@ -58,8 +58,8 @@ const Booking = () => {
             </Button>
            </Form.Item>
           </Form>
-          <Link to="/sign-in">
-            <p className="pt-20 text-center underline text-lg sm:text-xl">
+          <Link to="/signin">
+            <p className="pt-20 text-lg text-center underline sm:text-xl">
               Already have an account? Log in to manage all your bookings
             </p>
           </Link>

@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../Layout/Layout'
-import HeadTitle from "../Components/HeadTitle"
-import AboutCard from '../Components/AboutSection/AboutCard'
-import Content from '../Components/AboutSection/Content'
+import Layout from '../layout/Layout'
+import HeadTitle from "../components/HeadTitle"
+import AboutCard from '../components/aboutSection/AboutCard'
+import Content from '../components/aboutSection/Content'
 
 
 const AboutUs = () => {

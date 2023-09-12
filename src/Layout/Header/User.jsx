@@ -8,14 +8,16 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import PersonAdd from "@mui/icons-material/PersonAdd";
-import Person from "@mui/icons-material/Person";
 import Settings from "@mui/icons-material/Settings";
 import { Link } from "react-router-dom";
-import { PersonOutlined } from "@mui/icons-material";
+import { useAuth } from "../../contexts/AuthContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../../utils/firebase";
 
 const User = () => {
   const [openProfile, setOpenProfile] = useState(null);
   const open = Boolean(openProfile);
+  const { currentUser } = useAuth();
 
   const handleClick = (e) => {
     setOpenProfile(e.currentTarget);
@@ -25,24 +27,38 @@ const User = () => {
     setOpenProfile(null);
   };
 
+  const handleLogout = async () => {
+    await signOut(auth)
+  }
+
   return (
     <div className="relative">
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Tooltip title="Account">
-          <IconButton
-            onClick={handleClick}
-            size="medium"
-            sx={{ ml: 2 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
+      <div>
+        {currentUser ? (
+          <Box
+            sx={{ display: "flex", alignItems: "center", textAlign: "center" }}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>
-              <PersonOutlined />
-            </Avatar>
-          </IconButton>
-        </Tooltip>
-      </Box>
+            <Tooltip title="Account">
+              <IconButton
+                onClick={handleClick}
+                size="medium"
+                sx={{ ml: 2 }}
+                aria-controls={open ? "account-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+              >
+                <Avatar sx={{ width: 32, height: 32 }}>
+                  <img src={currentUser?.photoURL} alt="avatar" />
+                </Avatar>
+              </IconButton>
+            </Tooltip>
+          </Box>
+        ) : (
+          <Link to="/signin">
+            <button className="text-lg">Login</button>
+          </Link>
+        )}
+      </div>
       {openProfile && (
         <Menu
           anchorEl={openProfile}
@@ -77,11 +93,18 @@ const User = () => {
           </MenuItem>
           <Divider />
           <Link to="/sign-in">
-            <MenuItem>
+            <MenuItem sx={{display: "grid", placeItems: "center"}}>
               <ListItemIcon>
-                <Person fontSize="medium" />
+                <img
+                  src={currentUser?.photoURL}
+                  alt="avatar"
+                  className="w-20 h-20 rounded-full"
+                />
               </ListItemIcon>
-              <h1 className="text-lg">Login</h1>
+              <ListItemIcon  sx={{display: "grid", placeItems: "center"}}>
+                <h1>{currentUser?.displayName}</h1>
+                <h5>{currentUser?.email}</h5>
+              </ListItemIcon>
             </MenuItem>
           </Link>
           <Link to="/register">
@@ -89,7 +112,7 @@ const User = () => {
               <ListItemIcon>
                 <PersonAdd fontSize="medium" />
               </ListItemIcon>
-              <h1 className="text-lg"> Register</h1>
+              <Link onClick={handleLogout}><button className="text-lg"> Logout</button></Link>
             </MenuItem>
           </Link>
           <Link to="/booking">

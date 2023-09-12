@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../Layout/Layout'
-import HeadTitle from '../Components/HeadTitle'
-import Connect from '../Components/Connect'
+import Layout from '../layout/Layout'
+import HeadTitle from '../components/HeadTitle'
+import Connect from '../components/Connect'
 
 
 const ContactUs = () => {

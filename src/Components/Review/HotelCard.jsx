@@ -1,11 +1,12 @@
 import { Image, Card, Typography } from "antd";
 import React, { useEffect, useState } from "react";
 import { BsStar } from "react-icons/bs";
-import { FaSearchLocation } from "react-icons/fa";
 import { Col, Row } from "reactstrap";
 import Skeleton from "@mui/material/Skeleton";
+import location from "../../assets/images/location.gif";
+import { Link } from "react-router-dom";
 
-const HotelCard = ({ cover, place, desc, Rate, star, Room, price }) => {
+const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -21,16 +22,21 @@ const HotelCard = ({ cover, place, desc, Rate, star, Room, price }) => {
         {loading ? (
           <Skeleton variant="rectangular" width={450} height={250} />
         ) : (
-          <Image style={{ width: 600, height: 280 }} src={cover} alt="hotel" className="object-cover"/>
+          <Image
+            style={{ width: 600, height: 280 }}
+            src={cover}
+            alt="hotel"
+            className="object-cover"
+          />
         )}
       </Col>
-      <Col className="w-full px-2 sm:px-4 sm:w-1/2 lg:w-3/5 mb-4">
+      <Col className="w-full px-2 mb-4 sm:px-4 sm:w-1/2 lg:w-3/5">
         {loading ? (
           <Skeleton variant="rectangular" width={600} height={60} />
         ) : (
           <>
             <Col className="flex items-center gap-3 pb-4">
-              <FaSearchLocation className="w-6 h-6 text-gray-500" />
+              <img src={location} alt="location" className="w-8 h-8" />
               <h1 className="text-lg">{place}</h1>
             </Col>
             <Card.Meta
@@ -56,7 +62,7 @@ const HotelCard = ({ cover, place, desc, Rate, star, Room, price }) => {
             <Col className="flex items-center gap-2 pr-10 border-r">
               <BsStar />
               <h4 className="text-gray-500">
-                {Rate} <br /> <span className="text-black">{star}</span>
+                {rate} <br /> <span className="text-black">{star}</span>
               </h4>
             </Col>
             <Col className="flex items-center gap-2 pr-10 border-r">
@@ -69,7 +75,7 @@ const HotelCard = ({ cover, place, desc, Rate, star, Room, price }) => {
               </h4>
             </Col>
             <button className="px-4 py-2 text-white pattern">
-              CHECK AVALABILITY
+              <Link to={`/reviewpage/${place}`}> CHECK AVALABILITY</Link>
             </button>
           </Col>
         )}

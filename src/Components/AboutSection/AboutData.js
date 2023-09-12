@@ -1,7 +1,10 @@
-import { FaHome, FaWallet } from "react-icons/fa";
 import Restaurant from "../../assets/images/Restaurant.jpg";
 import about1 from "../../assets/images/about1.jpg";
 import Playground from "../../assets/images/meeting1.jpg";
+import rate from"../../assets/images/debt.png"
+import checkout from"../../assets/images/checkout.gif"
+import housekeeping from"../../assets/images/housekeeping.gif"
+import sleep from"../../assets/images/sleep.gif"
 
 export const  AboutData = [
     {
@@ -22,25 +25,25 @@ export const ContentData = [
   {
     id: 1,
     title: "Flexible Rates",
-    icon: <FaWallet />,
+    icon: rate,
     desc: 'When plans change, we offer easy cancellation options'
   },
   {
     id: 2,
     title: "Pay at the Hotel",
-    icon: <FaHome />,
+    icon: checkout,
     desc: 'Lock in the price now with no upront credit card charges for most rates'
   },
   {
     id: 3,
     title: "Earn Free Night",
-    icon: <FaHome />,
+    icon: sleep,
     desc: 'Get a free starting at just 7,500 points with our Rewards'
   },
   {
     id: 4,
     title: "Enhanced cleaning",
-    icon: <FaHome />,
+    icon: housekeeping,
     desc: 'Enjoy peace of mind elevated health and safety measures'
   },
 ]

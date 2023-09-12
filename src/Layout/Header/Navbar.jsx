@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigation } from "../../Layout/Data";
+import { Navigation } from "../Data";
 import { Link, NavLink } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import Logo from "../../assets/images/Logo1.png";
@@ -18,13 +18,19 @@ const Navbar = () => {
     <div>
       <nav
         className={`${
-          sticky ? "text-white h-16 sm:h-18 pattern shadow-lg" : "h-14 sm:h-16 bg-white shadow-md"
+          sticky
+            ? "text-white h-16 sm:h-18 pattern shadow-lg"
+            : "h-14 sm:h-16 bg-white shadow-md"
         } fixed top-0 left-0 z-50 w-full py-3 px-6 flex items-center justify-between`}
       >
         <Link to="/">
-        <div className="logo">
-          <img src={Logo} alt="Logo" className="object-contain sm:w-64 h-9 sm:h-12" />
-        </div>
+          <div className="logo">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="object-contain sm:w-64 h-9 sm:h-12"
+            />
+          </div>
         </Link>
         <ul className="items-center hidden gap-6 lg:flex">
           {Navigation.map((link, index) => {

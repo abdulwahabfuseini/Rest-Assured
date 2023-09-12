@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Navigation } from "../../Layout/Data";
+import { Navigation } from "../Data";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);

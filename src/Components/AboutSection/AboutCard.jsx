@@ -34,7 +34,7 @@ const AboutCard = () => {
             const { title2, desc, Cover2 } = items;
             return (
               <>
-                <Col className="sm:w-1/2 lg:w-8/12"  data-aos="fade-right">
+                <Col className="sm:w-1/2 lg:w-8/12"  data-aos="fade-right" key={index}>
                   <img
                     src={Cover2}
                     alt={Cover2}
@@ -56,7 +56,7 @@ const AboutCard = () => {
             const { title3, desc, Cover3 } = items;
             return (
               <>
-                <Col className="sm:w-1/2 lg:w-6/12 lg:px-4 sm:pr-4 lg:pr-4"  data-aos="fade-right">
+                <Col className="sm:w-1/2 lg:w-6/12 lg:px-4 sm:pr-4 lg:pr-4"  data-aos="fade-right" key={index}>
                   <h3 className="pt-5 pb-2 text-xl font-bold sm:text-3xl text-Header">
                     {title3}
                   </h3>

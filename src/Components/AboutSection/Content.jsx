@@ -9,7 +9,7 @@ const Content = () => {
         {ContentData.map((item) => {
           return (
             <div key={item.id} className="grid p-5  bg-white shadow-md rounded-lg text-dry place-items-center w-full sm:w-[320px] h-52"  data-aos="fade-up">
-              <h4 className="text-3xl">{item.icon}</h4>
+              <img src={item?.icon} alt={item?.title} className="w-32 h-16 object-contain"/>
               <h1 className="py-3 text-xl">{item.title}</h1>
               <p className="text-lg text-center">{item.desc}</p>
             </div>

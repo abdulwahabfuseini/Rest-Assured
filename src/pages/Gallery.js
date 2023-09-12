@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../Layout/Layout";
-import HeadTitle from "../Components/HeadTitle";
-import GalleryCard from "../Components/Gallery/GalleryCard";
+import Layout from "../layout/Layout";
+import HeadTitle from "../components/HeadTitle";
+import GalleryCard from "../components/gallery/GalleryCard";
 
 const Gallery = () => {
   return (

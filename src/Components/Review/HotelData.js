@@ -1,4 +1,3 @@
-// import Hotel5 from "../../assets/images/destin8.jpg";
 import Hotel6 from "../../assets/images/Hotel10.jpg";
 import Hotel7 from "../../assets/images/hotel3.jpg";
 import Hotel8 from "../../assets/images/Room-3.jpg";
@@ -19,7 +18,7 @@ export const HotelData = [
       cover: Hotel5,
       place: "Rest Assured, California",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -29,7 +28,7 @@ export const HotelData = [
       cover: Hotel11,
       place: "Rest Assured, Kumerica",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -39,7 +38,7 @@ export const HotelData = [
       cover: Hotel13,
       place: "Rest Assured, Lagos",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -49,7 +48,7 @@ export const HotelData = [
       cover: Hotel12,
       place: "Rest Assured, Accra",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -59,7 +58,7 @@ export const HotelData = [
       cover: Hotel14,
       place: "Rest Assured, Miami",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -69,7 +68,7 @@ export const HotelData = [
       cover: Hotel16,
       place: "Rest Assured, Los Angeles",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -79,7 +78,7 @@ export const HotelData = [
       cover: Hotel8,
       place: "Rest Assured, Tokyo",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -89,7 +88,7 @@ export const HotelData = [
       cover: Hotel19,
       place: "Rest Assured, Kumerica",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -99,7 +98,7 @@ export const HotelData = [
       cover: Holtel9,
       place: "Rest Assured, Abuja",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -109,7 +108,7 @@ export const HotelData = [
       cover: Hotel15,
       place: "Rest Assured, Tema",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -119,7 +118,7 @@ export const HotelData = [
       cover: Bedroom,
       place: "Rest Assured, California",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -129,7 +128,7 @@ export const HotelData = [
       cover: Hotel7,
       place: "Rest Assured, Lagos",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450
@@ -139,7 +138,7 @@ export const HotelData = [
       cover: Hotel6,
       place: "Rest Assured, Miami",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
-      Rate: "Rating",
+      rate: "Rating",
       star: "5 Stars",
       Room: "Rooms from",
       price: 450

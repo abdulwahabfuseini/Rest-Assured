@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../Layout/Layout'
-import HeadTitle from '../Components/HeadTitle'
-import HotelReview from '../Components/Review/HotelReview'
+import Layout from '../layout/Layout'
+import HeadTitle from '../components/HeadTitle'
+import HotelReview from '../components/review/HotelReview'
 
 const Review = () => {
   return (

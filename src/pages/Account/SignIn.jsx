@@ -1,38 +1,59 @@
-import React from "react";
-import Layout from "../../Layout/Layout";
+import React, { useState } from "react";
+import Layout from "../../layout/Layout";
 import { Button, Checkbox, Form, Input } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { LockOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../utils/firebase";
+import { ClipLoader } from "react-spinners";
+import { BsEnvelopeAt } from "react-icons/bs";
 
 const SignIn = () => {
+  const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
-  const navigate = useNavigate()
-  
-  const handleSubmit = (values) => {
-    navigate("/Rest-Assured", {replace: true})
+  const navigate = useNavigate();
+
+  const handleSubmit = async (values) => {
+    setLoading(true);
+    try {
+      const { email, password } = values;
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+      navigate("/Rest-Assured", { replace: true });
+    } catch (error) {
+      alert("Ooops!! Failed to Login");
+    }
+    setLoading(false);
   };
 
   return (
     <Layout>
-      <div className="flex flex-col items-center w-full h-full  py-40 justify-center">
-        <h1 className="px-10 pb-10 sm:text-xl text-center font--bold">
+      <div className="flex flex-col items-center justify-center w-full h-full py-40">
+        <h1 className="px-10 pb-10 text-center sm:text-xl font--bold">
           Log in to enjoy your member rates
         </h1>
         <Form
           onFinish={handleSubmit}
           form={form}
           name="normal_login"
-          className="px-4 w-full sm:w-96"
+          className="w-full px-4 sm:w-96"
           initialValues={{ remember: true }}
         >
           <Form.Item
-            name="username"
-            rules={[{ required: true, message: "Please input your Username!" }]}
+            name="email"
+            rules={[
+              { required: true, message: "Please input your email!" },
+              { type: "email" },
+            ]}
           >
             <Input
-              prefix={<UserOutlined />}
-              placeholder="Username"
+              prefix={<BsEnvelopeAt />}
+              placeholder="Email"
               className="h-14"
             />
           </Form.Item>
@@ -58,15 +79,27 @@ const SignIn = () => {
 
           <Form.Item>
             <Button
-              type="primary"
+              disabled={loading}
               htmlType="submit"
-              className="w-full h-10 text-white text-lg bg-Header"
+              className="w-full h-10 text-lg text-white pattern"
             >
-              Log in
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <ClipLoader
+                    color="#36d7b7"
+                    loading={loading}
+                    size={20}
+                    margin={2}
+                  />
+                  <h6>Loading...</h6>
+                </div>
+              ) : (
+                "Log in"
+              )}
             </Button>
           </Form.Item>
           <Link to="/register">
-            <h6 className="pt-5 text-lg sm:text-xl text-center underline">
+            <h6 className="pt-5 text-lg text-center hover:underline  sm:text-xl">
               Don't have an account? Sign up
             </h6>
           </Link>

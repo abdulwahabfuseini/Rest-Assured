@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../Layout/Layout'
-import HeadTitle from '../Components/HeadTitle'
-import OfferItem from '../Components/OfferSection/OfferItem'
+import Layout from '../layout/Layout'
+import HeadTitle from '../components/HeadTitle'
+import OfferItem from '../components/offerSection/OfferItem'
 
 const Offer
  = () => {

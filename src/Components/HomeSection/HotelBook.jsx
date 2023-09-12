@@ -31,7 +31,6 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
     setBook(false);
   };
 
-
   return (
     <List>
       <Card
@@ -46,7 +45,13 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
         }
         actions={[
           <Rate allowHalf value={rating} className="text-sm sm:text-md" />,
-          <Button type="primary" onClick={handleOpen} className=" font-semibold">Book Now</Button>,
+          <Button
+            type="primary"
+            onClick={handleOpen}
+            className=" font-semibold"
+          >
+            Book Now
+          </Button>,
         ]}
         title={name}
       >
@@ -102,7 +107,7 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
                   { type: "date" },
                 ]}
               >
-                <DatePicker placeholder="Check In" className="w-full" />
+                <DatePicker placeholder="Check In" className="w-full " />
               </Form.Item>
               <Form.Item
                 name={"Check out"}
@@ -110,6 +115,7 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
                   { required: true, message: "Please Select Date" },
                   { type: "date" },
                 ]}
+                className="z-50"
               >
                 <DatePicker placeholder="Check Out" className="w-full" />
               </Form.Item>
@@ -117,8 +123,8 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
                 type="primary"
                 size="large"
                 htmlType="submit"
-                className="pattern text-white p-2 w-full" 
-                style={{color: "white"}}
+                className="pattern text-white p-2 w-full"
+                style={{ color: "white" }}
               >
                 Book
               </Button>

@@ -47,7 +47,7 @@ const Connect = () => {
         () => {
           setLoading(false);
           alert(
-            "Thanks for contacting Rest Assured Hotel we will get black to you as soon as possible. Stay Bless!!!"
+            "Thanks for contacting Rest Assured Hotel, we will get black to you as soon as possible. Stay Bless!!!"
           );
           setForm();
         },
@@ -169,7 +169,7 @@ const Connect = () => {
             <Button
               htmlType="submit"
               type="primary"
-              className="h-10 my-8 border-2 cursor-pointer border-neutral-300 bg-dry"
+              className="h-10 my-8 text-lg border-2 cursor-pointer border-neutral-300 bg-dry"
             >
               {loading ? "Sending..." : "Send"}
             </Button>

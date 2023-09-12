@@ -7,7 +7,7 @@ import { Col, Row } from "reactstrap";
 
 const Partnership = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-[600px] sm:h-[650px]">
       <div className="relative">
         <header className="w-full py-5 text-3xl text-center text-white h-44 pattern"  >
           PartnerShips

@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import { FootLinks } from "../Layout/Data";
+import { FootLinks } from "./Data";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo1.png";
 import {
@@ -18,7 +18,6 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-
 
 const Footer = () => {
   return (
@@ -52,12 +51,14 @@ const Footer = () => {
               <Col key={index}>
                 <Accordion>
                   <AccordionSummary
-                    expandIcon={<FaChevronDown className="text-white"/>}
+                    expandIcon={<FaChevronDown className="text-white" />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     className="rounded-none shadow-lg pattern"
                   >
-                    <Typography fontSize={22} className="py-2 text-white">{foot.title}</Typography>
+                    <Typography fontSize={22} className="py-2 text-white">
+                      {foot.title}
+                    </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
@@ -80,7 +81,11 @@ const Footer = () => {
       </Row>
       <Row>
         <Row className="flex flex-col items-center justify-between px-12 mt-8 sm:px-0 sm:flex-row">
-          <img src={Logo} alt="logo" className="object-contain sm:w-40 lg:w-64 lg:h-16" />
+          <img
+            src={Logo}
+            alt="logo"
+            className="object-contain sm:w-40 lg:w-64 lg:h-16"
+          />
           <span>
             <h1 className="py-4 text-xl">Connect with us</h1>
             <Col className="flex items-center gap-2">
@@ -111,7 +116,7 @@ const Footer = () => {
         <h1 className="text-xl">
           Rest Assured Hotel{" "}
           <span>Copyright &copy; 2023 All Rights Reserved</span>
-          <h1 className="py-4 text-md">Created by: Fuseini Abdul Wahab</h1>
+          <h1 className="py-4 text-md">Created by: F.A.W</h1>
         </h1>
       </Row>
     </Container>

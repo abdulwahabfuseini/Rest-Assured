@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../Layout/Layout";
-import HeadTitle from "../Components/HeadTitle";
-import BlogContent from "../Components/BlogSection/BlogContent";
-import BlogCard from "../Components/BlogSection/BlogCard";
+import Layout from "../layout/Layout";
+import HeadTitle from "../components/HeadTitle";
+import BlogContent from "../components/blogSection/BlogContent";
+import BlogCard from "../components/blogSection/BlogCard";
 
 
 const Blog = () => {

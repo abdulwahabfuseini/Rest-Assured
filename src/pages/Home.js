@@ -1,11 +1,11 @@
 import React from "react";
-import Layout from "../Layout/Layout";
-import Hero from "../Components/HomeSection/Hero";
-import PopularHotels from "../Components/HomeSection/PopularHotels";
-import Partnership from "../Components/HomeSection/Partnership";
-import Download from "../Components/HomeSection/Download";
-import Discover from "../Components/HomeSection/Discover";
-import MapDirection  from "../Components/MapDirection";
+import Layout from "../layout/Layout";
+import Hero from "../components/homeSection/Hero";
+import PopularHotels from "../components/homeSection/PopularHotels";
+import Partnership from "../components/homeSection/Partnership";
+import Download from "../components/homeSection/Download";
+import Discover from "../components/homeSection/Discover";
+import MapDirection  from "../components/MapDirection";
 
 
 const Home = () => {
