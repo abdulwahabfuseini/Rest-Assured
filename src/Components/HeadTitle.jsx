@@ -11,7 +11,7 @@ const HeadTitle = () => {
         <Row>
           <img src={HeadImage} alt=""  className="w-full h-[200px] sm:h-[250px] object-cover relative"/>
         </Row>
-        <Row className="absolute top-0 left-0 flex items-center justify-between w-full h-full px-3 pt-16 bg-opacity-50 sm:pt-20 lg:pt-16 bg-dry sm:px-10 md:px-20">
+        <Row className="absolute top-0 left-0 flex items-center justify-between w-full h-full px-3 pt-16 bg-opacity-40 sm:pt-20 lg:pt-16 bg-dry sm:px-10 md:px-20">
           <h1 className="text-xl font-bold text-white capitalize md:text-4xl">
             {location.pathname.split("/")[1]}
           </h1>

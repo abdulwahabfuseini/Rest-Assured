@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { HiMiniBars3BottomRight } from "react-icons/hi2";
+import { LiaTimesSolid } from "react-icons/lia";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Navigation } from "../Data";
@@ -36,7 +37,7 @@ const MobileNav = () => {
     <>
       <nav className="relative pt-7 lg:hidden">
         <div onClick={() => setIsOpen(true)}>
-          <FaBars className="w-6 font-bold cursor-pointer h-7" />
+          <HiMiniBars3BottomRight className="w-8 font-bold cursor-pointer h-7" />
         </div>
         <motion.div
           variants={circleVariants}
@@ -56,7 +57,7 @@ const MobileNav = () => {
             onClick={() => setIsOpen(false)}
             className="absolute top-5 right-5"
           >
-            <FaTimes className="w-6 font-bold cursor-pointer h-7" />
+            <LiaTimesSolid className="w-6 font-bold cursor-pointer h-7" />
           </div>
           <div className="space-y-5 text-xl text-center">
             {Navigation.map((link, index) => {

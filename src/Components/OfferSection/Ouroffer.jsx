@@ -21,11 +21,11 @@ const Ouroffer = ({ item: { title, cover, discount, desc } }) => {
         <img src={cover} alt="" className="object-cover w-full h-60" />
       )}
       <Badge.Ribbon
-        text={discount}
-        className="z-20 -mt-12 text-2xl pattern"
+        text={`${discount}% off`}
+        className="z-20 -mt-10 text-lg pattern"
         color=""
-        style={{ width: 72, height: 40 }}
-      ></Badge.Ribbon>
+        style={{ width: 76, height: 32 }}
+      />
       <Card
         title={title}
         actions={[

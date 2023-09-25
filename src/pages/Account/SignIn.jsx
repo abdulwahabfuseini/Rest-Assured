@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../../layout/Layout";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, message } from "antd";
 import { LockOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -25,8 +25,9 @@ const SignIn = () => {
 
       const user = userCredential.user;
       navigate("/Rest-Assured", { replace: true });
+      message.success("Successfully Logged in")
     } catch (error) {
-      alert("Ooops!! Failed to Login");
+      message.error("Ooops!!! failed to Login")
     }
     setLoading(false);
   };
@@ -99,7 +100,7 @@ const SignIn = () => {
             </Button>
           </Form.Item>
           <Link to="/register">
-            <h6 className="pt-5 text-lg text-center hover:underline  sm:text-xl">
+            <h6 className="pt-5 text-lg text-center hover:underline sm:text-xl">
               Don't have an account? Sign up
             </h6>
           </Link>

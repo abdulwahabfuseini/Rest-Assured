@@ -1,35 +1,17 @@
 import React, { useState } from "react";
-import {
-  Card,
-  DatePicker,
-  Form,
-  Image,
-  Input,
-  List,
-  Rate,
-  Typography,
-} from "antd";
+import { Card, Image, List, Modal, Rate, Typography } from "antd";
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
+import BookingForm from "../../components/BookingForm";
+
+
 
 const HotelBook = ({ name, cover, rating, price, discount }) => {
-  const [Book, setBook] = useState(false);
-  const [form] = Form.useForm();
+  const [book, setBook] = useState(false);
 
-  const handleSubmit = (values) => {
-    console.log("Received values of form:", values);
-    form.resetFields();
-  };
-
-  const handleOpen = () => {
+  const handleClickOpen = () => {
     setBook(true);
   };
 
-  const handleClose = () => {
-    setBook(false);
-  };
 
   return (
     <List>
@@ -47,7 +29,7 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
           <Rate allowHalf value={rating} className="text-sm sm:text-md" />,
           <Button
             type="primary"
-            onClick={handleOpen}
+            onClick={handleClickOpen}
             className=" font-semibold"
           >
             Book Now
@@ -58,7 +40,7 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
         <Card.Meta
           title={
             <Typography.Paragraph>
-              Price: ${price}
+              Price: $ {price}.00
               <Typography.Text delete type="danger" className="pl-4">
                 {parseFloat(price + (price * discount) / 100).toFixed(2)}
               </Typography.Text>
@@ -66,71 +48,16 @@ const HotelBook = ({ name, cover, rating, price, discount }) => {
           }
         ></Card.Meta>
       </Card>
-      {Book && (
-        <Dialog open={Book} onClose={handleClose}>
-          <DialogTitle className="pb-3 text-center text-md">
-            Provide Your Details
-          </DialogTitle>
-          <DialogContent>
-            <Form onFinish={handleSubmit} form={form}>
-              <Form.Item
-                name={"name"}
-                rules={[
-                  { required: true, message: "Please Enter Full Name" },
-                  { type: "name" },
-                ]}
-              >
-                <Input type="text" placeholder="Enter Full Name" />
-              </Form.Item>
-              <Form.Item
-                name={"email"}
-                rules={[
-                  { required: true, message: "Please Enter Email Address" },
-                  { type: "email" },
-                ]}
-              >
-                <Input type="email" placeholder="Enter Email Address" />
-              </Form.Item>
-              <Form.Item
-                name={"number"}
-                rules={[
-                  { required: true, message: "Please Enter Phone Number" },
-                  { type: "tel" },
-                ]}
-              >
-                <Input type="tel" placeholder="Enter Phone Number" />
-              </Form.Item>
-              <Form.Item
-                name={"Check in"}
-                rules={[
-                  { required: true, message: "Please Select Date" },
-                  { type: "date" },
-                ]}
-              >
-                <DatePicker placeholder="Check In" className="w-full " />
-              </Form.Item>
-              <Form.Item
-                name={"Check out"}
-                rules={[
-                  { required: true, message: "Please Select Date" },
-                  { type: "date" },
-                ]}
-                className="z-50"
-              >
-                <DatePicker placeholder="Check Out" className="w-full" />
-              </Form.Item>
-              <Button
-                type="primary"
-                size="large"
-                htmlType="submit"
-                className="pattern text-white p-2 w-full"
-                style={{ color: "white" }}
-              >
-                Book
-              </Button>
-            </Form>
-          </DialogContent>
-        </Dialog>
+      {book && (
+        <Modal
+          title="Provide your details to reserve a table"
+          open={book}
+          onOk={() => setBook(false)}
+          onCancel={() => setBook(false)}
+          footer={[]}
+        >
+          <BookingForm />
+        </Modal>
       )}
     </List>
   );

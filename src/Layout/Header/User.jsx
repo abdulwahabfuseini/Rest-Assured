@@ -9,14 +9,17 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../../utils/firebase";
+import { message } from "antd";
 
 const User = () => {
   const [openProfile, setOpenProfile] = useState(null);
   const open = Boolean(openProfile);
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
   const { currentUser } = useAuth();
 
   const handleClick = (e) => {
@@ -28,7 +31,15 @@ const User = () => {
   };
 
   const handleLogout = async () => {
-    await signOut(auth)
+    setLoading(true);
+    try {
+      await signOut(auth);
+      navigate("/", { replace: true });
+      message.success("Successfully Logged out")
+    } catch (error) {
+      message.error("Ooops!!! failed to Logout")
+    }
+    setLoading(false);
   }
 
   return (

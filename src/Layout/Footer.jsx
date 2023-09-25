@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import { FootLinks } from "./Data";
+import { FootLinks, Socialconnect } from "./Data";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo1.png";
 import {
@@ -18,6 +18,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import { Tooltip } from "antd";
 
 const Footer = () => {
   return (
@@ -88,18 +89,27 @@ const Footer = () => {
           />
           <span>
             <h1 className="py-4 text-xl">Connect with us</h1>
-            <Col className="flex items-center gap-2">
-              <FaFacebookF className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
-              <FaTwitter className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
-              <FaInstagram className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
-              <FaYoutube className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
-              <FaWhatsapp className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1" />
-              <FaLinkedinIn className="w-10 h-10 p-2 cursor-pointer sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-glass rounded-xl hover:translate-y-1 " />
+            <Col className="flex items-center gap-2 pt-2">
+              {Socialconnect.map((connect, index) => {
+                return (
+                  <Col key={index}>
+                    <Tooltip
+                      color={connect?.color}
+                      title={connect?.title}
+                      key={connect.id}
+                    >
+                      <a href={connect?.link} target="blank">
+                        <span>{connect.icon}</span>
+                      </a>
+                    </Tooltip>
+                  </Col>
+                );
+              })}
             </Col>
           </span>
           <span>
             <h1 className="py-4 text-xl">Download our App</h1>
-            <Col className="flex items-center gap-4">
+            <Col className="flex items-center gap-4 cursor-pointer">
               <span className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg">
                 <FaApple className="w-6 h-6 " />
                 <h4>iOS</h4>

@@ -16,7 +16,7 @@ export const HotelData = [
     {
       id: 1,
       cover: Hotel5,
-      place: "Rest Assured, California",
+      place: "Rest Assured, India",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit ",
       rate: "Rating",
       star: "5 Stars",

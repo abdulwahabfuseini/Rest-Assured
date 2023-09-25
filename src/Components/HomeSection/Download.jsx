@@ -25,7 +25,7 @@ const Download = () => {
                     </p>
                   );
                 })}
-                <div className="flex items-center gap-2 py-10">
+                <div className="flex items-center gap-2 py-10 cursor-pointer">
                   {app.get.map((store, index) => {
                     return (
                       <span

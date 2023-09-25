@@ -5,32 +5,20 @@ import PageNotFound from "./PageNotFound";
 import { FaChevronLeft } from "react-icons/fa";
 import HeadTitle from "../components/HeadTitle";
 import Layout from "../layout/Layout";
-import { Button, Card, Typography, DatePicker, Form,  Input,  } from "antd";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
+import { Button, Card, Modal, Typography } from "antd";
+import BookingForm from "../components/BookingForm";
 
 const OfferPage = () => {
   const { id } = useParams();
 
   let item = AllOffers.find((item) => item.title === id);
 
-  const [Book, setBook] = useState(false);
-  const [form] = Form.useForm();
+  const [book, setBook] = useState(false);
 
-  const handleSubmit = (values) => {
-    console.log("Received values of form:", values);
-    form.resetFields();
-  };
-
-  const handleOpen = () => {
+  const handleClickOpen = () => {
     setBook(true);
   };
 
-  const handleClose = () => {
-    setBook(false);
-  };
-  
   return (
     <Layout>
       <div>
@@ -79,7 +67,6 @@ const OfferPage = () => {
                   }
                 ></Card.Meta>
               </div>
-
               <div className="w-full h-full p-4 sm:w-1/2 lg:w-2/5">
                 <h1 className="py-2 text-xl sm:text-2xl">
                   Are you interrested in this offer?
@@ -87,85 +74,34 @@ const OfferPage = () => {
                 <Typography.Paragraph className="text-lg tracking-tighter text-justify ">
                   {item.offerdesc}
                 </Typography.Paragraph>
+                <Typography.Paragraph style={{ fontSize: 20 }}>
+                  Price: $ {item.price.toLocaleString()}.00
+                  <Typography.Text delete type="danger" className="pl-4">
+                    {parseFloat(
+                      item.price + (item.price * item.discount) / 100
+                    ).toLocaleString()}
+                    .00
+                  </Typography.Text>
+                </Typography.Paragraph>
                 <Button
-                onClick={handleOpen}
+                  onClick={handleClickOpen}
                   type="primary"
                   className="h-12 my-4 text-xl bg-green-600"
                 >
-                  Book Now
+                  book Now
                 </Button>
               </div>
             </div>
-            {Book && (
-              <Dialog open={Book} onClose={handleClose}>
-                <DialogTitle className="pb-3 text-center text-md">
-                  Provide Your Details
-                </DialogTitle>
-                <DialogContent>
-                  <Form onFinish={handleSubmit} form={form}>
-                    <Form.Item
-                      name={"name"}
-                      rules={[
-                        { required: true, message: "Please Enter Full Name" },
-                        { type: "name" },
-                      ]}
-                    >
-                      <Input type="text" placeholder="Enter Full Name" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"email"}
-                      rules={[
-                        {
-                          required: true,
-                          message: "Please Enter Email Address",
-                        },
-                        { type: "email" },
-                      ]}
-                    >
-                      <Input type="email" placeholder="Enter Email Address" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"number"}
-                      rules={[
-                        {
-                          required: true,
-                          message: "Please Enter Phone Number",
-                        },
-                        { type: "tel" },
-                      ]}
-                    >
-                      <Input type="tel" placeholder="Enter Phone Number" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"Check in"}
-                      rules={[
-                        { required: true, message: "Please Select Date" },
-                        { type: "date" },
-                      ]}
-                    >
-                      <DatePicker placeholder="Check In" className="w-full" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"Check out"}
-                      rules={[
-                        { required: true, message: "Please Select Date" },
-                        { type: "date" },
-                      ]}
-                    >
-                      <DatePicker placeholder="Check Out" className="w-full" />
-                    </Form.Item>
-                    <Button
-                      type="primary"
-                      size="large"
-                      htmlType="submit"
-                      className="w-full p-2 text-white pattern"
-                      style={{ color: "white" }}
-                    >
-                      Book
-                    </Button>
-                  </Form>
-                </DialogContent>
-              </Dialog>
+            {book && (
+              <Modal
+                title="Provide your details to reserve a table"
+                open={book}
+                onOk={() => setBook(false)}
+                onCancel={() => setBook(false)}
+                footer={[]}
+              >
+                <BookingForm />
+              </Modal>
             )}
           </div>
         ) : (

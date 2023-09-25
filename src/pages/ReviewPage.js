@@ -4,10 +4,8 @@ import PageNotFound from "./PageNotFound";
 import { FaChevronLeft } from "react-icons/fa";
 import HeadTitle from "../components/HeadTitle";
 import Layout from "../layout/Layout";
-import { Button, Card, Typography, DatePicker, Form, Input } from "antd";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
+import { Button, Card, Modal, Typography } from "antd";
+import BookingForm from "../components/BookingForm";
 import { HotelData } from "../components/review/HotelData";
 import { Col } from "reactstrap";
 import location from "../assets/images/location.gif";
@@ -17,20 +15,10 @@ const ReviewPage = () => {
 
   let item = HotelData.find((item) => item.place === id);
 
-  const [Book, setBook] = useState(false);
-  const [form] = Form.useForm();
+  const [book, setBook] = useState(false);
 
-  const handleSubmit = (values) => {
-    console.log("Received values of form:", values);
-    form.resetFields();
-  };
-
-  const handleOpen = () => {
+  const handleClickOpen = () => {
     setBook(true);
-  };
-
-  const handleClose = () => {
-    setBook(false);
   };
 
   return (
@@ -82,7 +70,6 @@ const ReviewPage = () => {
                   }
                 ></Card.Meta>
               </div>
-
               <div className="w-full h-full p-4 sm:w-1/2 lg:w-2/5">
                 <Col className="flex items-center gap-3 pb-4">
                   <img src={location} alt="location" className="w-8 h-8" />
@@ -91,8 +78,11 @@ const ReviewPage = () => {
                 <Typography.Paragraph className="text-lg tracking-tighter text-justify ">
                   {item.desc}
                 </Typography.Paragraph>
+                <Typography.Paragraph style={{ fontSize: 20 }}>
+                  Price: $ {item.price.toLocaleString()}.00 /per night
+                </Typography.Paragraph>
                 <Button
-                  onClick={handleOpen}
+                  onClick={handleClickOpen}
                   type="primary"
                   className="h-12 my-4 text-xl bg-green-600"
                 >
@@ -100,76 +90,16 @@ const ReviewPage = () => {
                 </Button>
               </div>
             </div>
-            {Book && (
-              <Dialog open={Book} onClose={handleClose}>
-                <DialogTitle className="pb-3 text-center text-md">
-                  Provide Your Details
-                </DialogTitle>
-                <DialogContent>
-                  <Form onFinish={handleSubmit} form={form}>
-                    <Form.Item
-                      name={"name"}
-                      rules={[
-                        { required: true, message: "Please Enter Full Name" },
-                        { type: "name" },
-                      ]}
-                    >
-                      <Input type="text" placeholder="Enter Full Name" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"email"}
-                      rules={[
-                        {
-                          required: true,
-                          message: "Please Enter Email Address",
-                        },
-                        { type: "email" },
-                      ]}
-                    >
-                      <Input type="email" placeholder="Enter Email Address" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"number"}
-                      rules={[
-                        {
-                          required: true,
-                          message: "Please Enter Phone Number",
-                        },
-                        { type: "tel" },
-                      ]}
-                    >
-                      <Input type="tel" placeholder="Enter Phone Number" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"Check in"}
-                      rules={[
-                        { required: true, message: "Please Select Date" },
-                        { type: "date" },
-                      ]}
-                    >
-                      <DatePicker placeholder="Check In" className="w-full" />
-                    </Form.Item>
-                    <Form.Item
-                      name={"Check out"}
-                      rules={[
-                        { required: true, message: "Please Select Date" },
-                        { type: "date" },
-                      ]}
-                    >
-                      <DatePicker placeholder="Check Out" className="w-full" />
-                    </Form.Item>
-                    <Button
-                      type="primary"
-                      size="large"
-                      htmlType="submit"
-                      className="w-full p-2 text-white pattern"
-                      style={{ color: "white" }}
-                    >
-                      Book
-                    </Button>
-                  </Form>
-                </DialogContent>
-              </Dialog>
+            {book && (
+              <Modal
+                title="Provide your details to reserve a table"
+                open={book}
+                onOk={() => setBook(false)}
+                onCancel={() => setBook(false)}
+                footer={[]}
+              >
+                <BookingForm />
+              </Modal>
             )}
           </div>
         ) : (

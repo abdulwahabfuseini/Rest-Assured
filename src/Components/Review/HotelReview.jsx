@@ -8,8 +8,8 @@ const HotelReview = () => {
     <Container className="w-full h-full py-16 lg:p-20">
       <Row>
         <Col className="pb-10 leading-10 text-center">
-          <header className="text-2xl">Hotel Reviews</header>
-          <h1 className="text-lg">Five Star hotel reviews</h1>
+          <header className="text-2xl sm:text-3xl">Hotel Reviews</header>
+          <h1 className="text-lg sm:text-xl">Five Star hotel reviews</h1>
         </Col>
         <Col>
           {HotelData.map((review) => {

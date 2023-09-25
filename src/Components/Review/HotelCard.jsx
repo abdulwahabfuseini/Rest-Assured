@@ -45,7 +45,7 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
                   ellipsis={{
                     rows: 2,
                     expandable: true,
-                    symbol: "more",
+                    symbol: "Read More",
                   }}
                 >
                   {desc}

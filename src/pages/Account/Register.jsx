@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 import Layout from "../../layout/Layout";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { Col } from "reactstrap";
 import { auth } from "../../utils/firebase";
@@ -12,16 +11,17 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ClipLoader } from "react-spinners";
 
+
 const Register = () => {
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState();
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const [data, setData] = useState()
+  const [data, setData] = useState();
 
   const handleSubmit = async (values) => {
     setLoading(true);
     try {
-      const {firstName, lastName, email, password, phoneNumber } = values
+      const { firstName, lastName, email, password, phoneNumber } = values;
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -29,7 +29,10 @@ const Register = () => {
       );
       const user = userCredential.user;
 
-      const storageRef = ref(storage, `images/${ Date.now() + firstName + lastName + phoneNumber}`);
+      const storageRef = ref(
+        storage,
+        `images/${Date.now() + firstName + lastName + phoneNumber}`
+      );
       const uploadTask = uploadBytesResumable(storageRef, data);
 
       uploadTask.on(
@@ -45,27 +48,27 @@ const Register = () => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateProfile(user, {
-              displayName:  [values.firstName, values.lastName].join(" "),
+              displayName: [values.firstName, values.lastName].join(" "),
               photoURL: downloadURL,
-              phoneNumber
+              phoneNumber,
             });
 
             await setDoc(doc(db, "users", user.uid), {
               uid: "user.id",
-              displayName:  [values.firstName, values.lastName].join(" "),
+              displayName: [values.firstName, values.lastName].join(" "),
               email,
               photoURL: downloadURL,
-              phoneNumber
+              phoneNumber,
             });
           });
         }
       );
       navigate("/", { replace: true });
-      alert("Account created Successfully")
+      message.success("Account created successfully");
     } catch (error) {
-      alert("Failed to create an account");
+      message.error("Ooops!!! failed to create an account");
     }
-    setLoading(false)
+    setLoading(false);
   };
 
   return (
@@ -75,7 +78,12 @@ const Register = () => {
           Sign up to enjoy member rate when booking{" "}
         </h1>
         <div>
-          <Form onFinish={handleSubmit} form={form} layout="vertical" className="px-3 mx-auto sm:max-w-4xl lg:max-w-3xl sm:px-6">
+          <Form
+            onFinish={handleSubmit}
+            form={form}
+            layout="vertical"
+            className="px-3 mx-auto sm:max-w-4xl lg:max-w-3xl sm:px-6"
+          >
             <Col className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <Form.Item
                 name="firstName"
@@ -197,31 +205,30 @@ const Register = () => {
               </Form.Item>
             </Col>
             <Form.Item>
-            <input
-              type="file"
-              onChange={(e) => setData(e.target.files[0])}
-              required
-            />
-          </Form.Item>
+              <input
+                type="file"
+                onChange={(e) => setData(e.target.files[0])}
+                required
+              />
+            </Form.Item>
             <Col className="px-3">
               <Button
-               
                 htmlType="submit"
-                className="w-full h-12 text-lg  text-white pattern border sm:mt-8 cursor-point border-neutral-300"
+                className="w-full h-12 text-lg text-white border pattern sm:mt-8 cursor-point border-neutral-300"
               >
                 {loading ? (
-                <div className="flex items-center justify-center gap-2">
-                  <ClipLoader color="#36d7b7"
-                    loading={loading}
-                    size={20}
-                    margin={2}
-                    
+                  <div className="flex items-center justify-center gap-2">
+                    <ClipLoader
+                      color="#36d7b7"
+                      loading={loading}
+                      size={20}
+                      margin={2}
                     />
-                  <h6>isSubmitting...</h6>
-                </div>
-              ) : (
-                "Submit"
-              )}
+                    <h6>isSubmitting...</h6>
+                  </div>
+                ) : (
+                  "Submit"
+                )}
               </Button>
             </Col>
             <Link to="/signin">

@@ -69,14 +69,14 @@ const Connect = () => {
               rules={[
                 {
                   required: true,
-                  message: "Please Enter your Full Name",
+                  message: "Please Enter Full Name",
                 },
               ]}
               hasFeedback
             >
               <Input
                 placeholder="Enter Full Name"
-                name="text"
+                name="name"
                 onChange={handleChange}
                 className="h-12 border-2 cursor-pointer border-neutral-400"
                 type="text"
@@ -89,8 +89,9 @@ const Connect = () => {
                 {
                   required: true,
                   type: "email",
-                  message: "Please Enter a valid email",
+                  message: "Please Enter email",
                 },
+                {type: "email"}
               ]}
               hasFeedback
             >
@@ -110,18 +111,17 @@ const Connect = () => {
               rules={[
                 {
                   required: true,
-                  type: "number",
-                  message: "Please Enter your Phone Number",
+                  message: "Please Enter  Phone Number",
                 },
               ]}
               hasFeedback
             >
               <Input
                 placeholder="(000) 000 0000"
-                name="number"
+                name="phonenumber"
                 onChange={handleChange}
                 className="h-12 border-2 cursor-pointer border-neutral-400"
-                type="number"
+                type="tel"
               />
             </Form.Item>
             <Form.Item
@@ -169,7 +169,7 @@ const Connect = () => {
             <Button
               htmlType="submit"
               type="primary"
-              className="h-10 my-8 text-lg border-2 cursor-pointer border-neutral-300 bg-dry"
+              className="h-12 my-8 text-lg border-2 cursor-pointer border-neutral-300 bg-dry"
             >
               {loading ? "Sending..." : "Send"}
             </Button>
@@ -178,25 +178,25 @@ const Connect = () => {
         <div className="space-y-5 lg:px-6 lg:w-2/5">
           <Col>
             <h1 className="pb-2 text-xl font-bold">Visit our loaction</h1>
-            <p className="text-sm">
+            <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
               saepe sed blanditiis?
             </p>
           </Col>
           <Col>
             <h1 className="pb-2 text-lg font-bold">Message Us</h1>
-            <p className="text-sm">info@RestAssuredHotel.com</p>
+            <p>info@RestAssuredHotel.com</p>
             <a href="tel:+233245264999">+233 24 526 4999</a>
           </Col>
           <Col>
             <h1 className="pb-2 text-lg font-bold">Follow Us</h1>
             <Col className="flex items-center gap-4 pt-2">
-              <FaFacebookF className="w-8 h-8 p-2 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
-              <FaTwitter className="w-8 h-8 p-2 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
-              <FaLinkedin className="w-8 h-8 p-2 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
-              <FaInstagram className="w-8 h-8 p-2 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
-              <FaYoutube className="w-8 h-8 p-2 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
-              <FaWhatsapp className="w-8 h-8 p-2 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
+              <FaFacebookF className="w-8 h-8 p-1 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
+              <FaTwitter className="w-8 h-8 p-1 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
+              <FaLinkedin className="w-8 h-8 p-1 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
+              <FaInstagram className="w-8 h-8 p-1 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
+              <FaYoutube className="w-8 h-8 p-1 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
+              <FaWhatsapp className="w-8 h-8 p-1 rounded-lg cursor-pointer bg-slate-200 hover:-translate-y-1" />
             </Col>
           </Col>
         </div>
