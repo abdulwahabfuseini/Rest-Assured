@@ -4,7 +4,7 @@ import { DownloadApp } from "./HomeData";
 
 const Download = () => {
   return (
-    <div className="w-full lg:h-[470px] h-full text-white px-4 sm:px-6 lg:px-20 py-4 mb-32 overflow-hidden pattern"  data-aos="fade-left">
+    <div className="w-full lg:h-[470px] h-full text-white px-4 sm:px-6 lg:px-20 py-4 mb-8 overflow-hidden pattern"  data-aos="fade-left">
       {DownloadApp.map((app, index) => {
         return (
           <div key={index} className="flex flex-col gap-1 sm:flex-row"  data-aos="fade-up">

@@ -82,7 +82,7 @@ const SignIn = () => {
             <Button
               disabled={loading}
               htmlType="submit"
-              className="w-full h-10 text-lg text-white pattern"
+              className="w-full h-12 text-lg text-white pattern"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-2">

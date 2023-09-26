@@ -16,7 +16,7 @@ const Popular = () => {
       <div className="relative">
         <header className="py-5 text-xl text-center text-white h-44 pattern"  data-aos="fade-left">
           @REST ASSURED HOTEL
-          <p className="pt-3 text-sm sm:text-lg">
+          <p className="pt-3 text-base sm:text-xl">
             Share your moments and have a better rest{" "}
           </p>
         </header>
@@ -35,10 +35,10 @@ const Popular = () => {
                 slidesPerView: 1.3,
               },
               400: {
-                slidesPerView: 1.4,
+                slidesPerView: 1.6,
               },
               600: {
-                slidesPerView: 2,
+                slidesPerView: 2.5,
               },
               768: {
                 slidesPerView: 3,

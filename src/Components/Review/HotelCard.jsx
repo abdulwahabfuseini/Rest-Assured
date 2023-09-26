@@ -58,14 +58,14 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
         {loading ? (
           <Skeleton variant="rectangular" width={600} height={60} />
         ) : (
-          <Col className="flex flex-wrap items-center justify-center gap-6 pt-14">
+          <Col className="flex flex-wrap items-center justify-center gap-y-4 gap-x-6 pt-14">
             <Col className="flex items-center gap-2 pr-10 border-r">
               <BsStar />
               <h4 className="text-gray-500">
                 {rate} <br /> <span className="text-black">{star}</span>
               </h4>
             </Col>
-            <Col className="flex items-center gap-2 pr-10 border-r">
+            <Col className="flex items-center gap-2 pr-10 sm:border-r">
               <BsStar />
               <h4 className="text-sm text-gray-500">
                 {Room} <br />{" "}

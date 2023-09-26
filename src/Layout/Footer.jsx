@@ -6,13 +6,7 @@ import Logo from "../assets/images/Logo1.png";
 import {
   FaApple,
   FaChevronDown,
-  FaFacebookF,
   FaGooglePlay,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
 } from "react-icons/fa";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -66,9 +60,9 @@ const Footer = () => {
                       {foot.Links.map((items, index) => {
                         return (
                           <ul key={index} className="py-1">
-                            <h6 className="no-underline list-none cursor-pointer">
+                            <li className="text-lg no-underline list-none cursor-pointer">
                               <Link to={items.path}>{items.display}</Link>
-                            </h6>
+                            </li>
                           </ul>
                         );
                       })}

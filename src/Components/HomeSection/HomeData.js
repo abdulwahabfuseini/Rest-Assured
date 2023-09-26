@@ -13,10 +13,6 @@ import Hotel6 from "../../assets/images/Hotel-7.jpg";
 import Hotel17 from "../../assets/images/Hotel9.jpg";
 import Hotel7 from "../../assets/images/Hotel-8.jpg";
 import BEACH from "../../assets/images/Hotel-7.jpg";
-import Plane from "../../assets/images/plane1.jpg";
-import Part1 from "../../assets/images/part1.png";
-import Part2 from "../../assets/images/part2.webp";
-import Part3 from "../../assets/images/part3.webp";
 import Bedroom from "../../assets/images/bedroom1.jpg";
 import Wifi from "../../assets/images/wifi.png";
 import Aircon from "../../assets/images/air-conditioner.png";
@@ -27,6 +23,24 @@ import restaurants from "../../assets/images/spaghetti.gif";
 import disabled from "../../assets/images/disabled-person.png";
 import smartphone from "../../assets/images/smartphone_thumbnail.png";
 import iphone from "../../assets/images/iphone_thumbnail.png";
+import partner1 from "../../assets/images/partnership/plane1.png";
+import partner2 from "../../assets/images/partnership/sp2.png";
+import partner3 from "../../assets/images/partnership/sp3.png";
+import partner4 from "../../assets/images/partnership/sp11.png";
+import partner5 from "../../assets/images/partnership/sp5.png";
+import partner6 from "../../assets/images/partnership/sp4.png";
+import partner7 from "../../assets/images/partnership/sp12.png";
+import partner8 from "../../assets/images/partnership/plane1.png";
+import partner9 from "../../assets/images/partnership/sp10.png";
+import partner10 from "../../assets/images/partnership/sp1.png";
+import partner11 from "../../assets/images/partnership/sp13.png";
+import partner12 from "../../assets/images/partnership/part1.png";
+import partner13 from "../../assets/images/partnership/sp6.png";
+import partner14 from "../../assets/images/partnership/sp8.png";
+import partner15 from "../../assets/images/partnership/sp7.png";
+
+
+
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 // ======= Hero Page Data =====
@@ -201,39 +215,63 @@ export const ServiceProvide = [
 export const OurPartnership = [
   {
     id: 1,
-    cover: Plane,
-    company: "Company Name",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
+    cover: partner1,
   },
   {
     id: 2,
-    cover: Part1,
-    company: "Company Name",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
+    cover: partner2,
   },
   {
     id: 3,
-    cover: Plane,
-    company: "Company Name",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
+    cover: partner3,
   },
   {
     id: 4,
-    cover: Part3,
-    company: "Company Name",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
+    cover: partner4,
+  },
+  {
+    id: 5,
+    cover: partner5,
   },
   {
     id: 6,
-    cover: Part2,
-    company: "Company Name",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
+    cover: partner6,
   },
   {
     id: 7,
-    cover: Plane,
-    company: "Company Name",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum repudiandae?",
+    cover: partner7,
+  },
+  {
+    id: 8,
+    cover:partner8,
+  },
+  {
+    id: 9,
+    cover: partner9,
+  },
+  {
+    id: 10,
+    cover: partner10
+  },
+  {
+    id: 11,
+    cover: partner11
+  },
+  {
+    id: 12,
+    cover: partner12
+  },
+  {
+    id: 13,
+    cover: partner13
+  },
+  {
+    id: 14,
+    cover: partner14
+  },
+  {
+    id: 15,
+    cover: partner15
   },
 ];
 

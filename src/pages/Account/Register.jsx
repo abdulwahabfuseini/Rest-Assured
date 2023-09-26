@@ -84,7 +84,7 @@ const Register = () => {
             layout="vertical"
             className="px-3 mx-auto sm:max-w-4xl lg:max-w-3xl sm:px-6"
           >
-            <Col className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <Col className="grid grid-cols-1 gap-x-3 sm:grid-cols-2">
               <Form.Item
                 name="firstName"
                 label="First Name"

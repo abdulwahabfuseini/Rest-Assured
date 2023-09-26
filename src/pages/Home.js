@@ -11,7 +11,7 @@ import MapDirection  from "../components/MapDirection";
 const Home = () => {
   return (
     <Layout>
-      <div className="w-full h-full space-y-5 overflow-hidden sm:space-y-0" >
+      <div className="w-full h-full overflow-hidden" >
         <Hero />
         <PopularHotels />
         <Partnership />
