@@ -7,7 +7,7 @@ import { Col, Row } from "reactstrap";
 
 const Partnership = () => {
   return (
-    <div className="w-full h-full pb-4 mb-12 bg-gray-100">
+    <div className="w-full h-full pb-4 mb-12 bg-gray-100 px-2 sm:px-6">
       <div className="relative">
         <header className="w-full py-5 text-3xl text-center">
           PartnerShips
