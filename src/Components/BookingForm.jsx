@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, DatePicker, Form, Input, Select, Space } from "antd";
+import { Button, DatePicker, Form, Input, Select} from "antd";
 
 const ReserveForm = () => {
   const [form] = Form.useForm();
@@ -8,7 +8,7 @@ const ReserveForm = () => {
     console.log("Received values of form:", values);
     form.resetFields();
     alert(
-      "Thanks for reserving a table, we will love to see you at the exact time."
+      "Thanks for your booking, we would love to see you at the exact time."
     );
   };
 
@@ -89,20 +89,20 @@ const ReserveForm = () => {
             onChange={handleChange}
             options={[
               {
-                value: "Reservation for 2",
-                label: "Reservation for 2",
+                value: "Book for 2",
+                label: "Book for 2",
               },
               {
-                value: "Reservation for 3",
-                label: "Reservation for 3",
+                value: "Book for 3",
+                label: "Book for 3",
               },
               {
-                value: "Reservation for 4",
-                label: "Reservation for 4",
+                value: "Book for 4",
+                label: "Book for 4",
               },
               {
-                value: "Reservation for 6",
-                label: "Reservation for 6",
+                value: "Book for 6",
+                label: "Book for 6",
               },
             ]}
           />
@@ -112,33 +112,29 @@ const ReserveForm = () => {
           name="date"
           rules={[{ required: true, message: "Please Select Date" }]}
         >
-          <Space wrap>
-            <DatePicker
-              name="checkIn"
-              placeholder="Check In"
-              size="large"
-              style={{
-                width: 230,
-                boxShadow: "none",
-              }}
-            />
-          </Space>
+          <DatePicker
+            name="checkIn"
+            placeholder="Check In"
+            size="large"
+            style={{
+              width: 230,
+              boxShadow: "none",
+            }}
+          />
         </Form.Item>
         <Form.Item
           name="checkOut"
           rules={[{ required: true, message: "Please Select Date" }]}
         >
-          <Space wrap>
-            <DatePicker
-              name="date"
-              placeholder="Check out"
-              size="large"
-              style={{
-                width: 230,
-                boxShadow: "none",
-              }}
-            />
-          </Space>
+          <DatePicker
+            name="date"
+            placeholder="Check out"
+            size="large"
+            style={{
+              width: 230,
+              boxShadow: "none",
+            }}
+          />
         </Form.Item>
         <Button
           type="primary"
