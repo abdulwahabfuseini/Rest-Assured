@@ -57,27 +57,26 @@ const Hero = () => {
                     name="CheckIn"
                     rules={[{ required: true, message: "Field is reguired" }]}
                   >
-                  <Space wrap>
+
                   <DatePicker
                       name="CheckIn"
                       placeholder="Check In"
                       size="large"
                       className="w-full py-2 text-white border-2 border-yellow-300 bg-white backdrop-blur-lg h-14"
                     />
-                  </Space>
                   </Form.Item>
                   <Form.Item
                     name="CheckOut"
                     rules={[{ required: true, message: "Field is reguired" }]}
                   >
-                   <Space wrap>
+ 
                    <DatePicker
                       name="CheckOut"
                       placeholder="Check Out"
                       size="large"
                       className="w-full py-2 text-white border-2 border-yellow-300 bg-white backdrop-blur-lg h-14"
                     />
-                   </Space>
+
                   </Form.Item>
                 </Col>
                 <Form.Item
