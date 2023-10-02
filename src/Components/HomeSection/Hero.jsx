@@ -6,7 +6,7 @@ import { HeroSlide, ServiceProvide } from "./HomeData";
 import { FaPlusCircle } from "react-icons/fa";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
-import { Button, Card, DatePicker, Form, Input, Space } from "antd";
+import { Button, Card, DatePicker, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -16,9 +16,6 @@ const Hero = () => {
   const handleSubmit = (values) => {
     console.log("Received values of form:", values);
     navigate("/review")
-    alert(
-      "Thanks for reserving a table, we will love to see you at the exact time."
-    );
   };
 
   return (
