@@ -13,10 +13,11 @@ import {
 } from "react-icons/fa";
 
 const Connect = () => {
-  const [form, setForm] = useState({
+  const [form] = Form.useForm();
+  const [contact, setContact] = useState({
     name: "",
     email: "",
-    phoneNumber: 0,
+    phoneNumber: '',
     address: "",
     message: "",
   });
@@ -25,7 +26,7 @@ const Connect = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setContact({ ...contact, [name]: value });
   };
 
   const handleSubmit = (values) => {
@@ -35,11 +36,11 @@ const Connect = () => {
         "service_hc4os5t",
         "template_mnp1bqq",
         {
-          name: form.name,
-          email: form.email,
-          phoneNumber: form.phoneNumber,
-          address: form.address,
-          message: form.message,
+          name: contact.name,
+          email: contact.email,
+          phoneNumber: contact.phoneNumber,
+          address: contact.address,
+          message: contact.message,
         },
         "9vSC2INYrwofrkKDo"
       )
@@ -49,7 +50,8 @@ const Connect = () => {
           alert(
             "Thanks for contacting Rest Assured Hotel, we will get black to you as soon as possible. Stay Bless!!!"
           );
-          setForm();
+          setContact();
+          form.resetFields();
         },
         (error) => {
           setLoading(false);
@@ -59,9 +61,9 @@ const Connect = () => {
   };
 
   return (
-    <div className="w-full h-full px-8 py-10 sm:px-8 lg:px-20">
+    <div className="w-full h-full px-4 py-10 sm:px-8 lg:px-20">
       <div className="flex flex-col gap-y-10 lg:flex-row sm:gap-8 lg:gap-20">
-        <Form onFinish={handleSubmit} layout="vertical" className="lg:w-3/5 ">
+        <Form onFinish={handleSubmit} form={form}  layout="vertical" className="lg:w-3/5 ">
           <Col className="grid grid-cols-1 sm:gap-2 md:gap-4 sm:grid-cols-2">
           <Form.Item
               label="Full Name"
@@ -88,7 +90,6 @@ const Connect = () => {
               rules={[
                 {
                   required: true,
-                  type: "email",
                   message: "Please Enter email",
                 },
                 {type: "email"}
@@ -154,13 +155,12 @@ const Connect = () => {
                   message: "Please Enter message",
                 },
               ]}
-              hasFeedback
             >
               <TextArea
                 placeholder="Enter Message"
                 name="message"
                 onChange={handleChange}
-                className="border-2 cursor-pointer border-neutral-400"
+                className="py-2 border-2 cursor-pointer border-neutral-400"
                 type="text"
               />
             </Form.Item>

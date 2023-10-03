@@ -32,7 +32,7 @@ const Ouroffer = ({ item: { title, cover, discount, desc } }) => {
           <Link to={`/Offerpage/${title}`}>
             <Button
               type="primary"
-              className="text-white pattern hover:ring-2 h-10"
+              className="h-10 text-white pattern hover:ring-2"
             >
               {loading ? (
                 <Skeleton variant="rectangular" width={90} height={20} />
@@ -49,10 +49,11 @@ const Ouroffer = ({ item: { title, cover, discount, desc } }) => {
           <Card.Meta
             description={
               <Typography.Paragraph
+              className="text-[18px]"
                 ellipsis={{
                   rows: 2,
                   expandable: true,
-                  symbol: "more",
+                  symbol: "Read More",
                 }}
               >
                 {desc}

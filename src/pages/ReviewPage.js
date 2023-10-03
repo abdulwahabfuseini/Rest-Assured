@@ -43,8 +43,8 @@ const ReviewPage = () => {
                 </Col>
                 <Card.Meta
                   description={
-                    <Typography.Paragraph
-                      className="py-4 text-lg tracking-tight text-justify"
+                    <Typography.Paragraph 
+                      className="py-4 text-justify text-[18px] sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -58,7 +58,7 @@ const ReviewPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4 text-lg tracking-tight text-justify"
+                      className="py-4 text-justify text-[18px] sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -75,7 +75,7 @@ const ReviewPage = () => {
                   <img src={location} alt="location" className="w-8 h-8" />
                   <h1 className="text-lg sm:text-xl">{item.place}</h1>
                 </Col>
-                <Typography.Paragraph className="text-lg tracking-tighter text-justify ">
+                <Typography.Paragraph className=" text-justify text-[18px] sm:text-lg">
                   {item.desc}
                 </Typography.Paragraph>
                 <Typography.Paragraph style={{ fontSize: 20 }}>

@@ -3,10 +3,11 @@ import Layout from "../../layout/Layout";
 import { Button, Form, Input } from "antd";
 import { Link } from "react-router-dom";
 
+
 const Booking = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center w-full h-full px-auto sm:py-40 md:py-60">
+      <div className="flex flex-col w-full h-full py-32 sm:items-center sm:justify-center sm:py-40 md:py-60">
         <h1 className="px-10 pb-10 text-xl font-bold">Manage my Booking</h1>
         <div>
           <Form layout="vertical" className="sm:w-[600px] sm:px-0 px-5">
@@ -33,7 +34,6 @@ const Booking = () => {
               rules={[
                 {
                   required: true,
-                  type: "number",
                   message: "Please Enter a booking number",
                 },
                 { whitespace: false },
@@ -48,21 +48,18 @@ const Booking = () => {
                 type="number"
               />
             </Form.Item>
-           <Form.Item className="grid place-items-center">
-           <Button
+           <Form.Item className="grid sm:place-items-center">
+          <Link to="/review">
+          <Button
              type="primary"
               htmlType="submit"
-              className="w-full h-12 pt-3 bg-blue-400 border sm:w-80 sm:mt-14 cursor-point border-neutral-300"
+              className="w-full h-12 text-lg bg-blue-600 border sm:w-80 sm:mt-14 cursor-point border-neutral-300"
             >
               Search
             </Button>
+          </Link>
            </Form.Item>
           </Form>
-          <Link to="/signin">
-            <p className="pt-20 text-lg text-center underline sm:text-xl">
-              Already have an account? Log in to manage all your bookings
-            </p>
-          </Link>
         </div>
       </div>
     </Layout>

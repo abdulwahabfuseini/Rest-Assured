@@ -35,13 +35,14 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
           <Skeleton variant="rectangular" width={600} height={60} />
         ) : (
           <>
-            <Col className="flex items-center gap-3 pb-4">
+            <Col className="flex items-center gap-3 pb-2">
               <img src={location} alt="location" className="w-8 h-8" />
               <h1 className="text-lg">{place}</h1>
             </Col>
             <Card.Meta
               description={
                 <Typography.Paragraph
+                className=" text-justify text-[18px] sm:text-lg"
                   ellipsis={{
                     rows: 2,
                     expandable: true,
@@ -58,7 +59,7 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
         {loading ? (
           <Skeleton variant="rectangular" width={600} height={60} />
         ) : (
-          <Col className="flex flex-wrap items-center justify-center gap-y-4 gap-x-6 pt-14">
+          <Col className="flex flex-wrap items-center justify-center pt-5 gap-y-4 gap-x-4 sm:pt-14">
             <Col className="flex items-center gap-2 pr-10 border-r">
               <BsStar />
               <h4 className="text-gray-500">

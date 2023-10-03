@@ -41,7 +41,7 @@ const OfferPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4 text-lg tracking-tight text-justify"
+                      className="py-4  text-justify text-[18px] sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -55,7 +55,7 @@ const OfferPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4 text-lg tracking-tight text-justify"
+                      className="py-4 text-justify text-[18px] sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -68,10 +68,10 @@ const OfferPage = () => {
                 ></Card.Meta>
               </div>
               <div className="w-full h-full p-4 sm:w-1/2 lg:w-2/5">
-                <h1 className="py-2 text-xl sm:text-2xl">
+                <h1 className="py-2 text-2xl sm:text-2xl">
                   Are you interrested in this offer?
                 </h1>
-                <Typography.Paragraph className="text-lg tracking-tighter text-justify ">
+                <Typography.Paragraph className="text-justify text-[17px] sm:text-lg">
                   {item.offerdesc}
                 </Typography.Paragraph>
                 <Typography.Paragraph style={{ fontSize: 20 }}>
@@ -88,7 +88,7 @@ const OfferPage = () => {
                   type="primary"
                   className="h-12 my-4 text-xl bg-green-600"
                 >
-                  book Now
+                  Book Now
                 </Button>
               </div>
             </div>

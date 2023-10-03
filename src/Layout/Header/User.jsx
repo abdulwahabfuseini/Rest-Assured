@@ -7,7 +7,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
+import LogoutIcon from '@mui/icons-material/Logout';
 import Settings from "@mui/icons-material/Settings";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
@@ -121,13 +121,13 @@ const User = () => {
           <Link to="/register">
             <MenuItem>
               <ListItemIcon>
-                <PersonAdd fontSize="medium" />
+                <LogoutIcon fontSize="medium" />
               </ListItemIcon>
               <Link onClick={handleLogout}><button className="text-lg"> Logout</button></Link>
             </MenuItem>
           </Link>
           <Link to="/booking">
-            <MenuItem>
+            <MenuItem disabled={loading}>
               <ListItemIcon>
                 <Settings fontSize="medium" />
               </ListItemIcon>

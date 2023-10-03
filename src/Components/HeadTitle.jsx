@@ -16,7 +16,7 @@ const HeadTitle = () => {
             {location.pathname.split("/")[1]}
           </h1>
           <button className="px-2 py-2 text-white rounded sm:px-4 md:text-lg pattern">
-            <Link to="/Rest-Assured">Home / </Link>
+            <Link to="/">Home / </Link>
             <span className="capitalize ">
               {location.pathname.split("/")[1]}
             </span>
