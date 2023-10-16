@@ -33,6 +33,7 @@ const MobileNav = () => {
       },
     },
   };
+  
   return (
     <>
       <nav className="relative pt-7 lg:hidden">

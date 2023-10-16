@@ -16,7 +16,7 @@ const AboutCard = () => {
                   <h3 className="pt-5 pb-2 text-xl font-bold sm:text-2xl text-Header">
                     {title1}
                   </h3>
-                  <p className="text-lg tracking-tight text-justify">{desc}</p>
+                  <p className="text-lg break-all">{desc}</p>
                 </Col>
                 <Col className="sm:w-1/2 lg:w-3/5"  data-aos="fade-left">
                   <img
@@ -45,7 +45,7 @@ const AboutCard = () => {
                   <h1 className="pb-2 text-xl font-bold lg:pt-5 sm:text-3xl text-Header">
                     {title2}
                   </h1>
-                  <p className="text-lg tracking-tight text-justify">{desc}</p>
+                  <p className="text-lg break-all">{desc}</p>
                 </Col>
               </>
             );
@@ -60,7 +60,7 @@ const AboutCard = () => {
                   <h3 className="pt-5 pb-2 text-xl font-bold sm:text-3xl text-Header">
                     {title3}
                   </h3>
-                  <p className="text-lg tracking-tight text-justify">{desc}</p>
+                  <p className="text-lg break-word">{desc}</p>
                 </Col>
                 <Col className="sm:w-1/2 lg:w-3/5"  data-aos="fade-left">
                   <img

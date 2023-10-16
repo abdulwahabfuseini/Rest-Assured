@@ -42,7 +42,7 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
             <Card.Meta
               description={
                 <Typography.Paragraph
-                className=" text-justify text-[18px] sm:text-lg"
+                className="break-word text-lg"
                   ellipsis={{
                     rows: 2,
                     expandable: true,

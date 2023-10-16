@@ -49,7 +49,7 @@ const Ouroffer = ({ item: { title, cover, discount, desc } }) => {
           <Card.Meta
             description={
               <Typography.Paragraph
-              className="text-[18px]"
+              className="text-lg break-word text-left"
                 ellipsis={{
                   rows: 2,
                   expandable: true,

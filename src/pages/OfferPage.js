@@ -41,7 +41,7 @@ const OfferPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4  text-justify text-[18px] sm:text-lg"
+                      className="py-4  break text-lg sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -55,7 +55,7 @@ const OfferPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4 text-justify text-[18px] sm:text-lg"
+                      className="py-4 break-word text-lg sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -71,7 +71,7 @@ const OfferPage = () => {
                 <h1 className="py-2 text-2xl sm:text-2xl">
                   Are you interrested in this offer?
                 </h1>
-                <Typography.Paragraph className="text-justify text-[17px] sm:text-lg">
+                <Typography.Paragraph className="break-all text-lg sm:text-lg">
                   {item.offerdesc}
                 </Typography.Paragraph>
                 <Typography.Paragraph style={{ fontSize: 20 }}>

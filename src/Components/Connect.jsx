@@ -48,7 +48,7 @@ const Connect = () => {
         () => {
           setLoading(false);
           alert(
-            "Thanks for contacting Rest Assured Hotel, we will get black to you as soon as possible. Stay Bless!!!"
+            "Thanks for contacting Rest Assured Hotel, we will get back to you as soon as possible. Stay Bless!!!"
           );
           setContact();
           form.resetFields();
@@ -108,7 +108,7 @@ const Connect = () => {
           <Col className="grid grid-cols-1 sm:gap-2 md:gap-4 sm:grid-cols-2">
             <Form.Item
               label="Phone Number"
-              name="phonenumber"
+              name="phoneNumber"
               rules={[
                 {
                   required: true,
@@ -119,7 +119,7 @@ const Connect = () => {
             >
               <Input
                 placeholder="(000) 000 0000"
-                name="phonenumber"
+                name="phoneNumber"
                 onChange={handleChange}
                 className="h-12 border-2 cursor-pointer border-neutral-400"
                 type="tel"
@@ -178,15 +178,15 @@ const Connect = () => {
         <div className="space-y-5 lg:px-6 lg:w-2/5">
           <Col>
             <h1 className="pb-2 text-xl font-bold">Visit our loaction</h1>
-            <p>
+            <p className="text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
               saepe sed blanditiis?
             </p>
           </Col>
           <Col>
             <h1 className="pb-2 text-lg font-bold">Message Us</h1>
-            <p>info@RestAssuredHotel.com</p>
-            <a href="tel:+233245264999">+233 24 526 4999</a>
+            <p className="text-lg">info@RestAssuredHotel.com</p>
+            <a className="text-lg" href="tel:+233245264999">+233 24 526 4999</a>
           </Col>
           <Col>
             <h1 className="pb-2 text-lg font-bold">Follow Us</h1>
