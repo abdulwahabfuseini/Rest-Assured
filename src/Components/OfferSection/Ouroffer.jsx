@@ -10,13 +10,13 @@ const Ouroffer = ({ item: { title, cover, discount, desc } }) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
   return (
-    <List className="relative">
+    <List className="relative w-full">
       {loading ? (
-        <Skeleton variant="rectangular" width={450} height={250} />
+        <Skeleton variant="rectangular" height={250} />
       ) : (
         <img src={cover} alt="" className="object-cover w-full h-60" />
       )}
@@ -29,27 +29,27 @@ const Ouroffer = ({ item: { title, cover, discount, desc } }) => {
       <Card
         title={title}
         actions={[
-          <Link to={`/Offerpage/${title}`}>
-            <Button
-              type="primary"
-              className="h-10 text-white pattern hover:ring-2"
-            >
-              {loading ? (
-                <Skeleton variant="rectangular" width={90} height={20} />
-              ) : (
+          <Link to={`/OfferReview/${title}`}>
+            {loading ? (
+              <Skeleton variant="rectangular" height={40} className="mx-20 " />
+            ) : (
+              <Button
+                type="primary"
+                className="h-10 text-white pattern hover:ring-2"
+              >
                 <h1>SEE THE OFFER</h1>
-              )}
-            </Button>
+              </Button>
+            )}
           </Link>,
         ]}
       >
         {loading ? (
-          <Skeleton variant="rectangular" width={400} height={60} />
+          <Skeleton variant="rectangular" height={30} />
         ) : (
           <Card.Meta
             description={
               <Typography.Paragraph
-              className="text-lg break-word text-left"
+                className="text-lg text-left break-word"
                 ellipsis={{
                   rows: 2,
                   expandable: true,

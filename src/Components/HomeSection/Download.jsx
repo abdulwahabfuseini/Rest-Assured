@@ -7,7 +7,7 @@ const Download = () => {
     <div className="w-full lg:h-[470px] h-full text-white px-4 sm:px-6 lg:px-20 py-4 mb-8 overflow-hidden pattern"  data-aos="fade-left">
       {DownloadApp.map((app, index) => {
         return (
-          <div key={index} className="flex flex-col gap-1 sm:flex-row"  data-aos="fade-up">
+          <div key={index} className="flex flex-col gap-1 mx-auto sm:flex-row max-w-7xl"  data-aos="fade-up">
             <div className="w-full sm:w-1/2">
               <h1>{app.title}</h1>
               <h1 className="my-2 text-3xl">{app.SubTile1}</h1>

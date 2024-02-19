@@ -26,7 +26,7 @@ const ReviewPage = () => {
       <div>
         <HeadTitle />
         {item ? (
-          <div className="relative w-full h-full py-20 sm:px-4 lg:px-12">
+          <div className="relative w-full h-full py-20 mx-auto sm:px-4 lg:px-6 max-w-7xl">
             <div className="absolute left-3 top-8 sm:left-5 lg:left-12">
               <Link to="/review">
                 <span className="flex items-center gap-2 px-2 py-2 text-white rounded-md pattern">
@@ -39,12 +39,12 @@ const ReviewPage = () => {
                 <img src={item.cover} alt="cover" className="w-full" />
                 <Col className="flex items-center gap-3 py-4">
                   <img src={location} alt="location" className="w-8 h-8" />
-                  <h1 className="text-lg">{item.place}</h1>
+                  <h1 className="text-lg font-semibold">{item.place}</h1>
                 </Col>
                 <Card.Meta
                   description={
                     <Typography.Paragraph 
-                      className="py-4 break-word text-lg"
+                      className="py-4 text-lg break-word"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -58,7 +58,7 @@ const ReviewPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4 break-word text-lg"
+                      className="py-4 text-lg break-word"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -73,13 +73,13 @@ const ReviewPage = () => {
               <div className="w-full h-full p-4 sm:w-1/2 lg:w-2/5">
                 <Col className="flex items-center gap-3 pb-4">
                   <img src={location} alt="location" className="w-8 h-8" />
-                  <h1 className="text-lg sm:text-xl">{item.place}</h1>
+                  <h1 className="text-lg font-semibold sm:text-xl">{item.place}</h1>
                 </Col>
-                <Typography.Paragraph className="text-lg break-word">
+                <Typography.Paragraph className="mb-10 text-lg break-all">
                   {item.desc}
                 </Typography.Paragraph>
-                <Typography.Paragraph style={{ fontSize: 20 }}>
-                  Price: $ {item.price.toLocaleString()}.00 /per night
+                <Typography.Paragraph style={{ fontSize: 20 }} className="font-bold ">
+                  Price: $ {item.price.toLocaleString()}.00 / Per night
                 </Typography.Paragraph>
                 <Button
                   onClick={handleClickOpen}

@@ -6,7 +6,7 @@ import { DisCover } from './HomeData'
 const Discover = () => {
   return (
     <Container className="w-full h-full px-2 pt-5 sm:pt-12 md:pb-5 sm:px-5 md:px-4 lg:px-12">
-      <Row className="flex flex-col sm:items-center sm:flex-row">
+      <Row className="flex flex-col mx-auto sm:items-center sm:flex-row max-w-7xl">
         <Col className="space-y-6 sm:w-2/5"  data-aos="fade-right">
           <h1 className="text-2xl md:text-3xl">
             NEW PLACES TO <br /> DISCOVER

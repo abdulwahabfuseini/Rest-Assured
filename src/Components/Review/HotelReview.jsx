@@ -6,7 +6,7 @@ import HotelCard from "./HotelCard";
 const HotelReview = () => {
   return (
     <Container className="w-full h-full py-16 lg:p-20">
-      <Row>
+      <Row className="px-2 mx-auto sm:px-6 max-w-7xl">
         <Col className="pb-10 leading-10 text-center">
           <header className="text-2xl sm:text-3xl">Hotel Reviews</header>
           <h1 className="text-xl sm:text-2xl">Five Star hotel reviews</h1>

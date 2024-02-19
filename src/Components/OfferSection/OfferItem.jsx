@@ -10,8 +10,8 @@ const OfferItem = () => {
         <header className="w-full py-5 text-2xl text-center text-white h-44 pattern">
           Our Best Offers with Discounts
         </header>
-        <Row className="absolute left-0 px-4 top-20 lg:px-20 sm:px-5">
-          <Col className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+        <Row className="absolute left-0 right-0 px-4 mx-auto top-20 lg:px-20 sm:px-5 max-w-7xl">
+          <Col className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 lg:grid-cols-3">
             {AllOffers.map((item) => {
               return (
                 <Col className="flex items-center justify-center">

@@ -169,9 +169,9 @@ const Connect = () => {
             <Button
               htmlType="submit"
               type="primary"
-              className="h-12 my-8 text-lg border-2 cursor-pointer border-neutral-300 pattern"
+              className="h-12 my-8 text-xl border-2 cursor-pointer border-neutral-300 pattern"
             >
-              {loading ? "Sending..." : "Send"}
+              {loading ? "Sending..." : "Send Message"}
             </Button>
           </Col>
         </Form>

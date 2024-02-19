@@ -24,7 +24,7 @@ const OfferPage = () => {
       <div>
         <HeadTitle />
         {item ? (
-          <div className="relative w-full h-full py-20 sm:px-4 lg:px-12">
+          <div className="relative w-full h-full py-20 mx-auto sm:px-4 lg:px-12 max-w-7xl">
             <div className="absolute left-3 top-8 sm:left-5 lg:left-12">
               <Link to="/offer">
                 <span className="flex items-center gap-2 px-2 py-2 text-white rounded-md pattern">
@@ -41,7 +41,7 @@ const OfferPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4  break text-lg sm:text-lg"
+                      className="py-4 text-lg break sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -55,7 +55,7 @@ const OfferPage = () => {
                 <Card.Meta
                   description={
                     <Typography.Paragraph
-                      className="py-4 break-word text-lg sm:text-lg"
+                      className="py-4 text-lg break-word sm:text-lg"
                       ellipsis={{
                         rows: 2,
                         expandable: true,
@@ -68,13 +68,13 @@ const OfferPage = () => {
                 ></Card.Meta>
               </div>
               <div className="w-full h-full p-4 sm:w-1/2 lg:w-2/5">
-                <h1 className="py-2 text-2xl sm:text-2xl">
+                <h1 className="py-2 text-2xl font-semibold sm:text-2xl">
                   Are you interrested in this offer?
                 </h1>
-                <Typography.Paragraph className="break-all text-lg sm:text-lg">
+                <Typography.Paragraph className="mb-10 text-lg break-all">
                   {item.offerdesc}
                 </Typography.Paragraph>
-                <Typography.Paragraph style={{ fontSize: 20 }}>
+                <Typography.Paragraph style={{ fontSize: 20 }} className="font-semibold">
                   Price: $ {item.price.toLocaleString()}.00
                   <Typography.Text delete type="danger" className="pl-4">
                     {parseFloat(

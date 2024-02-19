@@ -13,14 +13,14 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
   return (
-    <Row className="flex flex-col gap-4 p-2 mb-4 border sm:p-4 sm:flex-row">
-      <Col className="w-full sm:w-1/2 lg:w-2/5">
+    <Row className="flex flex-col gap-4 mb-4 border sm:p-4 sm:flex-row">
+      <Col className="w-full h-full sm:w-1/2 lg:w-2/5">
         {loading ? (
-          <Skeleton variant="rectangular" width={450} height={250} />
+          <Skeleton variant="rectangular" height={250} />
         ) : (
           <Image
             style={{ width: 600, height: 280 }}
@@ -32,7 +32,7 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
       </Col>
       <Col className="w-full px-2 mb-4 sm:px-4 sm:w-1/2 lg:w-3/5">
         {loading ? (
-          <Skeleton variant="rectangular" width={600} height={60} />
+          <Skeleton variant="rectangular" height={120} />
         ) : (
           <>
             <Col className="flex items-center gap-3 pb-2">
@@ -42,7 +42,7 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
             <Card.Meta
               description={
                 <Typography.Paragraph
-                className="break-word text-lg"
+                className="text-lg break-word"
                   ellipsis={{
                     rows: 2,
                     expandable: true,
@@ -57,7 +57,7 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
         )}
 
         {loading ? (
-          <Skeleton variant="rectangular" width={600} height={60} />
+          <Skeleton variant="rectangular" height={80} className="my-10" />
         ) : (
           <Col className="flex flex-wrap items-center justify-center pt-5 gap-y-4 gap-x-4 sm:pt-14">
             <Col className="flex items-center gap-2 pr-10 border-r">
@@ -76,7 +76,7 @@ const HotelCard = ({ cover, place, desc, rate, star, Room, price }) => {
               </h4>
             </Col>
             <button className="px-4 py-2 text-white pattern">
-              <Link to={`/reviewpage/${place}`}> CHECK AVALABILITY</Link>
+              <Link to={`/reviewPage/${place}`}> CHECK AVALABILITY</Link>
             </button>
           </Col>
         )}

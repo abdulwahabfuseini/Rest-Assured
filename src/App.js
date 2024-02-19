@@ -11,7 +11,7 @@ import PageNotFound from "./pages/PageNotFound";
 import SignIn from "./pages/account/SignIn";
 import Register from "./pages/account/Register";
 import Booking from "./pages/account/Booking";
-import SinglePage from "./pages/OfferPage";
+import OfferReview from "./pages/OfferReview";
 import ReviewPage from "./pages/ReviewPage";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -46,8 +46,8 @@ const App = () => {
         <Route path="signin" element={<SignIn />} />
         <Route path="register" element={<Register />} />
         <Route path="booking" element={<Booking />} />
-        <Route path="Offerpage/:id" element={<SinglePage />} />
-        <Route path="reviewpage/:id" element={<ReviewPage />} />
+        <Route path="OfferReview/:id" element={<OfferReview />} />
+        <Route path="reviewPage/:id" element={<ReviewPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </AuthProvider>

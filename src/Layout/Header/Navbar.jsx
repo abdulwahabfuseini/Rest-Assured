@@ -15,13 +15,13 @@ const Navbar = () => {
     });
   });
   return (
-    <div>
+    <div className={`${
+      sticky
+        ? "text-white pattern shadow-lg fixed top-0 left-0 z-50 w-full py-3"
+        : " bg-white shadow-md"
+    } px-4 sm:px-6 py-4`}>
       <nav
-        className={`${
-          sticky
-            ? "text-white h-16 sm:h-18 pattern shadow-lg"
-            : "h-14 sm:h-16 bg-white shadow-md"
-        } fixed top-0 left-0 z-50 w-full py-3 px-6 flex items-center justify-between`}
+        className="flex items-center justify-between mx-auto max-w-7xl"
       >
         <Link to="/">
           <div className="logo">
@@ -37,7 +37,7 @@ const Navbar = () => {
             const { display, path } = link;
             return (
               <li
-                className="text-lg font-medium list-none cursor-pointer hover:text-yellow-400"
+                className="text-lg font-semibold list-none cursor-pointer hover:text-yellow-400"
                 key={index}
               >
                 <NavLink to={path}>{display}</NavLink>
@@ -45,7 +45,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center justify-center gap-3">
           <User />
           <MobileNav />
         </div>

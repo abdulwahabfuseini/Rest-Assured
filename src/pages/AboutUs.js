@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../layout/Layout'
 import HeadTitle from "../components/HeadTitle"
-import AboutCard from '../components/aboutSection/AboutCard'
 import Content from '../components/aboutSection/Content'
+import Background from '../components/aboutSection/Backgroung'
 
 
 const AboutUs = () => {
@@ -10,7 +10,7 @@ const AboutUs = () => {
     <Layout>
        <div className='w-full h-full overflow-hidden'>
         <HeadTitle />
-        <AboutCard />
+        <Background />
         <Content />
       </div>
     </Layout>

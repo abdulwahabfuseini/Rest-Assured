@@ -73,13 +73,14 @@ const Register = () => {
 
   return (
     <Layout>
-      <div className="py-40 sm:py-40">
+      <div className="py-14 sm:py-20">
         <h1 className="pb-10 font-bold text-center capitalize sm:text-xl">
           Sign up to enjoy member rate when booking{" "}
         </h1>
         <div>
           <Form
             onFinish={handleSubmit}
+           
             form={form}
             layout="vertical"
             className="px-3 mx-auto sm:max-w-4xl lg:max-w-3xl sm:px-6"
@@ -88,6 +89,7 @@ const Register = () => {
               <Form.Item
                 name="firstName"
                 label="First Name"
+                
                 rules={[
                   {
                     required: true,
@@ -100,12 +102,12 @@ const Register = () => {
                   type="text"
                   name="firstName"
                   placeholder="Enter First Name"
-                  className="w-full h-12 cursor-pointer"
+                  className="w-full h-12 text-lg border-2 cursor-pointer"
                 />
               </Form.Item>
               <Form.Item
                 name="lastName"
-                label="last Name"
+                label="Last Name"
                 rules={[
                   {
                     required: true,
@@ -118,7 +120,7 @@ const Register = () => {
                   type="text"
                   name="lastName"
                   placeholder="Enter last Name"
-                  className="w-full h-12 cursor-pointer"
+                  className="w-full h-12 text-lg border-2 cursor-pointer"
                 />
               </Form.Item>
               <Form.Item
@@ -136,7 +138,7 @@ const Register = () => {
                 <Input
                   type="email"
                   placeholder="Enter Email Address"
-                  className="h-12 cursor-pointer"
+                  className="h-12 text-lg border-2 cursor-pointer"
                 />
               </Form.Item>
               <Form.Item
@@ -155,7 +157,7 @@ const Register = () => {
                   type="tel"
                   name="phoneNumber"
                   placeholder="(000) 000 000 0000"
-                  className="h-12 cursor-pointer"
+                  className="h-12 text-lg border-2 cursor-pointer"
                 />
               </Form.Item>
               <Form.Item
@@ -173,7 +175,7 @@ const Register = () => {
                 <Input.Password
                   type="password"
                   placeholder="Enter Password"
-                  className="h-12 cursor-pointer"
+                  className="h-12 text-lg border-2 cursor-pointer"
                 />
               </Form.Item>
               <Form.Item
@@ -200,7 +202,7 @@ const Register = () => {
                 <Input.Password
                   type="password"
                   placeholder="Confirm Password"
-                  className="h-12 cursor-pointer"
+                  className="h-12 text-lg border-2 cursor-pointer"
                 />
               </Form.Item>
             </Col>

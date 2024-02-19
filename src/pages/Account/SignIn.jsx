@@ -34,8 +34,8 @@ const SignIn = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center w-full h-full py-40">
-        <h1 className="px-10 pb-10 text-center sm:text-xl font--bold">
+      <div className="flex flex-col items-center justify-center w-full h-full py-14 sm:py-20">
+        <h1 className="pb-10 text-lg font-bold text-center sm:text-xl">
           Log in to enjoy your member rates
         </h1>
         <Form
@@ -47,6 +47,7 @@ const SignIn = () => {
         >
           <Form.Item
             name="email"
+           
             rules={[
               { required: true, message: "Please input your email!" },
               { type: "email" },
@@ -55,7 +56,7 @@ const SignIn = () => {
             <Input
               prefix={<BsEnvelopeAt />}
               placeholder="Email"
-              className="h-14"
+              className="text-lg border-2 h-14"
             />
           </Form.Item>
           <Form.Item
@@ -66,23 +67,18 @@ const SignIn = () => {
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
               placeholder="Password"
-              className="h-14"
+              className="text-lg border-2 h-14"
             />
           </Form.Item>
-          <Form.Item className="flex items-center justify-between">
-            <Form.Item name="remember" valuePropName="checked" noStyle>
+          <Form.Item name="remember" valuePropName="checked" noStyle>
               <Checkbox>Remember me</Checkbox>
             </Form.Item>
-            <a href="/" className="relative mr-0">
-              Forgot password
-            </a>
-          </Form.Item>
 
           <Form.Item>
             <Button
               disabled={loading}
               htmlType="submit"
-              className="w-full h-12 text-lg text-white pattern"
+              className="w-full h-12 mt-6 text-xl text-white pattern"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-2">
@@ -95,7 +91,7 @@ const SignIn = () => {
                   <h6>Loading...</h6>
                 </div>
               ) : (
-                "Log in"
+                "Log In"
               )}
             </Button>
           </Form.Item>

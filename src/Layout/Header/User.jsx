@@ -58,7 +58,7 @@ const User = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
               >
-                <Avatar sx={{ width: 32, height: 32 }}>
+                <Avatar sx={{ width: 40, height: 40 }}>
                   <img src={currentUser?.photoURL} alt="avatar" />
                 </Avatar>
               </IconButton>
@@ -66,7 +66,7 @@ const User = () => {
           </Box>
         ) : (
           <Link to="/signin">
-            <button className="text-lg">Login</button>
+            <button className="text-lg font-semibold">Login</button>
           </Link>
         )}
       </div>

@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <>
-      <Container className="w-full h-full py-[74px] relative">
+      <Container className="relative w-full h-full py-">
         <Row className="flex flex-col items-center sm:flex-row">
           <Col className="w-full sm:w-1/2 lg:w-9/12">
             <Swiper
@@ -59,7 +59,7 @@ const Hero = () => {
                       name="CheckIn"
                       placeholder="Check In"
                       size="large"
-                      className="w-full py-2 text-white border-2 border-yellow-300 bg-white backdrop-blur-lg h-14"
+                      className="w-full py-2 text-white bg-white border-2 border-yellow-300 backdrop-blur-lg h-14"
                     />
                   </Form.Item>
                   <Form.Item
@@ -71,7 +71,7 @@ const Hero = () => {
                       name="CheckOut"
                       placeholder="Check Out"
                       size="large"
-                      className="w-full py-2 text-white border-2 border-yellow-300 bg-white backdrop-blur-lg h-14"
+                      className="w-full py-2 text-white bg-white border-2 border-yellow-300 backdrop-blur-lg h-14"
                     />
 
                   </Form.Item>
@@ -85,14 +85,14 @@ const Hero = () => {
                     prefix={
                       <AiOutlineUser className="w-6 h-6 font-bold text-yellow-400" />
                     }
-                    className="w-full  border-2 outline-none border-yellow-300 focus:none h-14"
+                    className="w-full border-2 border-yellow-300 outline-none focus:none h-14"
                     placeholder="Number of people"
                   />
                 </Form.Item>
                 <Button
                   htmlType="submit"
                   type="primary"
-                  className="flex items-center justify-center w-full gap-4 p-3 my-10 font-semibold bg-yellow-400 border-none h-12"
+                  className="flex items-center justify-center w-full h-12 gap-4 p-3 my-10 font-semibold bg-yellow-400 border-none"
                 >
                   <h1>FIND A HOTEL</h1>
                   <BsChevronCompactRight className="text-lg " />

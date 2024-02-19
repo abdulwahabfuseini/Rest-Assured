@@ -3,11 +3,7 @@ import { Col, Container, Row } from "reactstrap";
 import { FootLinks, Socialconnect } from "./Data";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo1.png";
-import {
-  FaApple,
-  FaChevronDown,
-  FaGooglePlay,
-} from "react-icons/fa";
+import { FaApple, FaChevronDown, FaGooglePlay } from "react-icons/fa";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -17,8 +13,8 @@ import { Tooltip } from "antd";
 const Footer = () => {
   return (
     <Container className="relative w-full h-full text-white sm:px-6 md:px-4 lg:px-16 pattern">
-      <Row className="hidden grid-cols-4 sm:grid">
-        <>
+      <Row className="mx-auto max-w-7xl">
+        <Row className="hidden grid-cols-4 sm:grid">
           {FootLinks.map((foot, index) => {
             return (
               <Col key={index}>
@@ -28,7 +24,7 @@ const Footer = () => {
                 {foot.Links.map((items, index) => {
                   return (
                     <ul key={index} className="py-1">
-                      <h6 className="no-underline list-none cursor-pointer">
+                      <h6 className="text-lg no-underline list-none cursor-pointer hover:text-yellow-400">
                         <Link to={items.path}>{items.display}</Link>
                       </h6>
                     </ul>
@@ -37,10 +33,8 @@ const Footer = () => {
               </Col>
             );
           })}
-        </>
-      </Row>
-      <Row className="grid sm:hidden">
-        <>
+        </Row>
+        <Row className="grid sm:hidden">
           {FootLinks.map((foot, index) => {
             return (
               <Col key={index}>
@@ -72,56 +66,56 @@ const Footer = () => {
               </Col>
             );
           })}
-        </>
-      </Row>
-      <Row>
-        <Row className="flex flex-col items-center justify-between px-12 mt-8 sm:px-0 sm:flex-row">
-          <img
-            src={Logo}
-            alt="logo"
-            className="object-contain sm:w-40 lg:w-64 lg:h-16"
-          />
-          <span>
-            <h1 className="py-4 text-xl">Connect with us</h1>
-            <Col className="flex items-center gap-2 pt-2">
-              {Socialconnect.map((connect, index) => {
-                return (
-                  <Col key={index}>
-                    <Tooltip
-                      color={connect?.color}
-                      title={connect?.title}
-                      key={connect.id}
-                    >
-                      <a href={connect?.link} target="blank">
-                        <span>{connect.icon}</span>
-                      </a>
-                    </Tooltip>
-                  </Col>
-                );
-              })}
-            </Col>
-          </span>
-          <span>
-            <h1 className="py-4 text-xl">Download our App</h1>
-            <Col className="flex items-center gap-4 cursor-pointer">
-              <span className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg">
-                <FaApple className="w-6 h-6 " />
-                <h4>iOS</h4>
-              </span>
-              <span className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg">
-                <FaGooglePlay className="w-6 h-6" />
-                <h4>Andriod</h4>
-              </span>
-            </Col>
-          </span>
         </Row>
-      </Row>
-      <Row className="px-2 py-8 mt-10 text-center border-t-4">
-        <h1 className="text-xl">
-          Rest Assured Hotel{" "}
-          <span>Copyright &copy; 2023 All Rights Reserved</span>
-          <h1 className="py-4 text-md">Created by: F.A.W</h1>
-        </h1>
+        <Row>
+          <Row className="flex flex-col justify-between px-8 mt-8 sm:items-center sm:px-0 sm:flex-row ">
+            <img
+              src={Logo}
+              alt="logo"
+              className="object-contain sm:w-40 lg:w-64 lg:h-16"
+            />
+            <span>
+              <h1 className="py-4 text-xl">Connect with us</h1>
+              <Col className="flex items-center gap-2 pt-2">
+                {Socialconnect.map((connect, index) => {
+                  return (
+                    <Col key={index}>
+                      <Tooltip
+                        color={connect?.color}
+                        title={connect?.title}
+                        key={connect.id}
+                      >
+                        <a href={connect?.link} target="blank">
+                          <span>{connect.icon}</span>
+                        </a>
+                      </Tooltip>
+                    </Col>
+                  );
+                })}
+              </Col>
+            </span>
+            <span>
+              <h1 className="py-4 text-xl">Download our App</h1>
+              <Col className="flex items-center gap-4 cursor-pointer">
+                <span className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg">
+                  <FaApple className="w-6 h-6 " />
+                  <h4>iOS</h4>
+                </span>
+                <span className="flex items-center justify-center gap-2 px-4 py-2 text-black bg-white rounded-lg">
+                  <FaGooglePlay className="w-6 h-6" />
+                  <h4>Andriod</h4>
+                </span>
+              </Col>
+            </span>
+          </Row>
+        </Row>
+        <Row className="px-2 py-8 mx-auto mt-10 text-center border-t-4 max-w-7xl">
+          <h1 className="text-xl">
+            Rest Assured Hotel{" "}
+            <span>Copyright &copy; 2023 All Rights Reserved</span>
+            <h1 className="py-4 text-md">Created by: F.A.W</h1>
+          </h1>
+        </Row>
       </Row>
     </Container>
   );

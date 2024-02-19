@@ -5,7 +5,6 @@ import {
   FaTwitter,
   FaWhatsapp,
   FaYoutube,
-  FaGoogle,
 } from "react-icons/fa";
 
 export const Navigation = [
@@ -32,6 +31,39 @@ export const Navigation = [
   {
     id: 6,
     display: "Offer",
+    path: "/offer",
+  },
+  {
+    id: 7,
+    display: "Contact Us",
+    path: "/contact-us",
+  },
+];
+
+export const MobileNavigation = [
+  {
+    id: 1,
+    display: "Overview",
+    path: "/",
+  },
+  {
+    id: 2,
+    display: "Know About Us",
+    path: "/about-us",
+  },
+  {
+    id: 3,
+    display: "Our Gallery",
+    path: "/gallery",
+  },
+  {
+    id: 4,
+    display: "Hotel Reviews",
+    path: "/review",
+  },
+  {
+    id: 6,
+    display: "Our Offer",
     path: "/offer",
   },
   {
